@@ -166,45 +166,45 @@ public class ContentType {
     }
 
     public static boolean isSupportedType(String contentType) {
-        return (null != contentType) &amp;&amp; sSupportedContentTypes.contains(contentType);
+        return (null != contentType) && sSupportedContentTypes.contains(contentType);
     }
 
     public static boolean isSupportedImageType(String contentType) {
-        return isImageType(contentType) &amp;&amp; isSupportedType(contentType);
+        return isImageType(contentType) && isSupportedType(contentType);
     }
 
     public static boolean isSupportedAudioType(String contentType) {
-        return isAudioType(contentType) &amp;&amp; isSupportedType(contentType);
+        return isAudioType(contentType) && isSupportedType(contentType);
     }
 
     public static boolean isSupportedVideoType(String contentType) {
-        return isVideoType(contentType) &amp;&amp; isSupportedType(contentType);
+        return isVideoType(contentType) && isSupportedType(contentType);
     }
 
     public static boolean isTextType(String contentType) {
-        return (null != contentType) &amp;&amp; contentType.startsWith("text/");
+        return (null != contentType) && contentType.startsWith("text/");
     }
 
     public static boolean isImageType(String contentType) {
-        return (null != contentType) &amp;&amp; contentType.startsWith("image/");
+        return (null != contentType) && contentType.startsWith("image/");
     }
 
     public static boolean isAudioType(String contentType) {
-        return (null != contentType) &amp;&amp; contentType.startsWith("audio/");
+        return (null != contentType) && contentType.startsWith("audio/");
     }
 
     public static boolean isVideoType(String contentType) {
-        return (null != contentType) &amp;&amp; contentType.startsWith("video/");
+        return (null != contentType) && contentType.startsWith("video/");
     }
 
     public static boolean isDrmType(String contentType) {
         return (null != contentType)
-                &amp;&amp; (contentType.equals(APP_DRM_CONTENT)
+                && (contentType.equals(APP_DRM_CONTENT)
                         || contentType.equals(APP_DRM_MESSAGE));
     }
 
     public static boolean isUnspecified(String contentType) {
-        return (null != contentType) &amp;&amp; contentType.endsWith("*");
+        return (null != contentType) && contentType.endsWith("*");
     }
 
     @SuppressWarnings("unchecked")

@@ -212,7 +212,7 @@ public class PduComposer {
          * In our implementation, only low 7 bits are stored and otherwise
          * bits are ignored.
          */
-        append((value | 0x80) &amp; 0xff);
+        append((value | 0x80) & 0xff);
     }
 
     /**
@@ -258,7 +258,7 @@ public class PduComposer {
         long temp = longInt;
 
         // Count the length of the long integer.
-        for(size = 0; (temp != 0) &amp;&amp; (size < LONG_INTEGER_LENGTH_MAX); size++) {
+        for(size = 0; (temp != 0) && (size < LONG_INTEGER_LENGTH_MAX); size++) {
             temp = (temp >>> 8);
         }
 
@@ -270,7 +270,7 @@ public class PduComposer {
         int shift = (size -1) * 8;
 
         for (i = 0; i < size; i++) {
-            append((int)((longInt >>> shift) &amp; 0xff));
+            append((int)((longInt >>> shift) & 0xff));
             shift = shift - 8;
         }
     }
@@ -288,7 +288,7 @@ public class PduComposer {
          * ; a Quote character must precede it. Otherwise the Quote character
          * ;must be omitted. The Quote is not part of the contents.
          */
-        if (((text[0])&amp;0xff) > TEXT_MAX) { // No need to check for <= 255
+        if (((text[0])&0xff) > TEXT_MAX) { // No need to check for <= 255
             append(TEXT_MAX);
         }
 
@@ -374,14 +374,14 @@ public class PduComposer {
 
         while(i > 0) {
             long temp = value >>> (i * 7);
-            temp = temp &amp; 0x7f;
+            temp = temp & 0x7f;
 
-            append((int)((temp | 0x80) &amp; 0xff));
+            append((int)((temp | 0x80) & 0xff));
 
             i--;
         }
 
-        append((int)(value &amp; 0x7f));
+        append((int)(value & 0x7f));
     }
 
     /**
@@ -874,7 +874,7 @@ public class PduComposer {
             byte[] start = part.getContentId();
             if (start != null) {
                 appendOctet(PduPart.P_DEP_START);
-                if (('<' == start[0]) &amp;&amp; ('>' == start[start.length - 1])) {
+                if (('<' == start[0]) && ('>' == start[start.length - 1])) {
                     appendTextString(start);
                 } else {
                     appendTextString("<" + new String(start) + ">");
@@ -961,7 +961,7 @@ public class PduComposer {
 
             if (null != contentId) {
                 appendOctet(PduPart.P_CONTENT_ID);
-                if (('<' == contentId[0]) &amp;&amp; ('>' == contentId[contentId.length - 1])) {
+                if (('<' == contentId[0]) && ('>' == contentId[contentId.length - 1])) {
                     appendQuotedString(contentId);
                 } else {
                     appendQuotedString("<" + new String(contentId) + ">");

@@ -188,16 +188,16 @@ public class PduPart {
          }
 
          if ((contentId.length > 1)
-                 &amp;&amp; ((char) contentId[0] == '<')
-                 &amp;&amp; ((char) contentId[contentId.length - 1] == '>')) {
+                 && ((char) contentId[0] == '<')
+                 && ((char) contentId[contentId.length - 1] == '>')) {
              mPartHeader.put(P_CONTENT_ID, contentId);
              return;
          }
 
          // Insert beginning '<' and trailing '>' for Content-Id.
          byte[] buffer = new byte[contentId.length + 2];
-         buffer[0] = (byte) (0xff &amp; '<');
-         buffer[buffer.length - 1] = (byte) (0xff &amp; '>');
+         buffer[0] = (byte) (0xff & '<');
+         buffer[buffer.length - 1] = (byte) (0xff & '>');
          System.arraycopy(contentId, 0, buffer, 1, contentId.length);
          mPartHeader.put(P_CONTENT_ID, buffer);
      }

@@ -1917,7 +1917,7 @@ public final class Telephony {
 	 */
 	public static final class MmsSms implements BaseColumns {
 		/**
-		 * The column to distinguish SMS &amp; MMS messages in query results.
+		 * The column to distinguish SMS & MMS messages in query results.
 		 */
 		public static final String TYPE_DISCRIMINATOR_COLUMN = "transport_type";
 

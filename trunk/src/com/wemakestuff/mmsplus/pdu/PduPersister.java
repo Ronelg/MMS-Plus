@@ -299,7 +299,7 @@ public class PduPersister {
             Cursor c, int columnIndex,
             PduHeaders headers, int mapColumn) {
         String s = c.getString(columnIndex);
-        if ((s != null) &amp;&amp; (s.length() > 0)) {
+        if ((s != null) && (s.length() > 0)) {
             int charsetColumnIndex = CHARSET_COLUMN_INDEX_MAP.get(mapColumn);
             int charset = c.getInt(charsetColumnIndex);
             EncodedStringValue value = new EncodedStringValue(
@@ -422,8 +422,8 @@ public class PduPersister {
                 // because their renderer accept Uri as source.
                 String type = toIsoString(contentType);
                 if (!ContentType.isImageType(type)
-                        &amp;&amp; !ContentType.isAudioType(type)
-                        &amp;&amp; !ContentType.isVideoType(type)) {
+                        && !ContentType.isAudioType(type)
+                        && !ContentType.isVideoType(type)) {
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
                     InputStream is = null;
 
@@ -1219,7 +1219,7 @@ public class PduPersister {
         }
         boolean existingUri = msgId != -1;
 
-        if (!existingUri &amp;&amp; MESSAGE_BOX_MAP.get(uri) == null) {
+        if (!existingUri && MESSAGE_BOX_MAP.get(uri) == null) {
             throw new MmsException(
                     "Bad destination, must be one of "
                     + "content://mms/inbox, content://mms/sent, "

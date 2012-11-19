@@ -45,7 +45,7 @@ public class QuotedPrintable {
             int b = bytes[i];
             if (b == ESCAPE_CHAR) {
                 try {
-                    if('\r' == (char)bytes[i + 1] &amp;&amp;
+                    if('\r' == (char)bytes[i + 1] &&
                             '\n' == (char)bytes[i + 2]) {
                         i += 2;
                         continue;

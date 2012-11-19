@@ -47,7 +47,7 @@ public class DrmConvertSession {
     public static DrmConvertSession open(Context context, String mimeType) {
         DrmManagerClient drmClient = null;
         int convertSessionId = -1;
-        if (context != null &amp;&amp; mimeType != null &amp;&amp; !mimeType.equals("")) {
+        if (context != null && mimeType != null && !mimeType.equals("")) {
             try {
                 drmClient = new DrmManagerClient(context);
                 try {
@@ -93,8 +93,8 @@ public class DrmConvertSession {
                     convertedStatus = mDrmClient.convertData(mConvertSessionId, inBuffer);
                 }
 
-                if (convertedStatus != null &amp;&amp;
-                        convertedStatus.statusCode == DrmConvertedStatus.STATUS_OK &amp;&amp;
+                if (convertedStatus != null &&
+                        convertedStatus.statusCode == DrmConvertedStatus.STATUS_OK &&
                         convertedStatus.convertedData != null) {
                     result = convertedStatus.convertedData;
                 }
@@ -124,7 +124,7 @@ public class DrmConvertSession {
     public int close(String filename) {
         DrmConvertedStatus convertedStatus = null;
         int result = Downloads.Impl.STATUS_UNKNOWN_ERROR;
-        if (mDrmClient != null &amp;&amp; mConvertSessionId >= 0) {
+        if (mDrmClient != null && mConvertSessionId >= 0) {
             try {
                 convertedStatus = mDrmClient.closeConvertSession(mConvertSessionId);
                 if (convertedStatus == null ||

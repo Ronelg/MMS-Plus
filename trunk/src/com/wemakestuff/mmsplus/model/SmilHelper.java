@@ -160,7 +160,7 @@ public class SmilHelper {
     }
 
     static public String escapeXML(String str) {
-        return str.replaceAll("&","&amp;")
+        return str.replaceAll("&","&")
                   .replaceAll("<", "&lt;")
                   .replaceAll(">", "&gt;")
                   .replaceAll("\"", "&quot;")

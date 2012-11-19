@@ -373,20 +373,20 @@ public class PduHeaders {
             case STORED:
             case TOTALS:
             case SENDER_VISIBILITY:
-                if ((VALUE_YES != value) &amp;&amp; (VALUE_NO != value)) {
+                if ((VALUE_YES != value) && (VALUE_NO != value)) {
                     // Invalid value.
                     throw new InvalidHeaderValueException("Invalid Octet value!");
                 }
                 break;
             case READ_STATUS:
-                if ((READ_STATUS_READ != value) &amp;&amp;
+                if ((READ_STATUS_READ != value) &&
                         (READ_STATUS__DELETED_WITHOUT_BEING_READ != value)) {
                     // Invalid value.
                     throw new InvalidHeaderValueException("Invalid Octet value!");
                 }
                 break;
             case CANCEL_STATUS:
-                if ((CANCEL_STATUS_REQUEST_SUCCESSFULLY_RECEIVED != value) &amp;&amp;
+                if ((CANCEL_STATUS_REQUEST_SUCCESSFULLY_RECEIVED != value) &&
                         (CANCEL_STATUS_REQUEST_CORRUPTED != value)) {
                     // Invalid value.
                     throw new InvalidHeaderValueException("Invalid Octet value!");
@@ -432,14 +432,14 @@ public class PduHeaders {
                 break;
             case RETRIEVE_STATUS:
                 // According to oma-ts-mms-enc-v1_3, section 7.3.50, we modify the invalid value.
-                if ((value > RETRIEVE_STATUS_ERROR_TRANSIENT_NETWORK_PROBLEM) &amp;&amp;
+                if ((value > RETRIEVE_STATUS_ERROR_TRANSIENT_NETWORK_PROBLEM) &&
                         (value < RETRIEVE_STATUS_ERROR_PERMANENT_FAILURE)) {
                     value = RETRIEVE_STATUS_ERROR_TRANSIENT_FAILURE;
-                } else if ((value > RETRIEVE_STATUS_ERROR_PERMANENT_CONTENT_UNSUPPORTED) &amp;&amp;
+                } else if ((value > RETRIEVE_STATUS_ERROR_PERMANENT_CONTENT_UNSUPPORTED) &&
                         (value <= RETRIEVE_STATUS_ERROR_END)) {
                     value = RETRIEVE_STATUS_ERROR_PERMANENT_FAILURE;
                 } else if ((value < RETRIEVE_STATUS_OK) ||
-                        ((value > RETRIEVE_STATUS_OK) &amp;&amp;
+                        ((value > RETRIEVE_STATUS_OK) &&
                                 (value < RETRIEVE_STATUS_ERROR_TRANSIENT_FAILURE)) ||
                                 (value > RETRIEVE_STATUS_ERROR_END)) {
                     value = RETRIEVE_STATUS_ERROR_PERMANENT_FAILURE;
@@ -447,14 +447,14 @@ public class PduHeaders {
                 break;
             case STORE_STATUS:
                 // According to oma-ts-mms-enc-v1_3, section 7.3.58, we modify the invalid value.
-                if ((value > STORE_STATUS_ERROR_TRANSIENT_NETWORK_PROBLEM) &amp;&amp;
+                if ((value > STORE_STATUS_ERROR_TRANSIENT_NETWORK_PROBLEM) &&
                         (value < STORE_STATUS_ERROR_PERMANENT_FAILURE)) {
                     value = STORE_STATUS_ERROR_TRANSIENT_FAILURE;
-                } else if ((value > STORE_STATUS_ERROR_PERMANENT_MMBOX_FULL) &amp;&amp;
+                } else if ((value > STORE_STATUS_ERROR_PERMANENT_MMBOX_FULL) &&
                         (value <= STORE_STATUS_ERROR_END)) {
                     value = STORE_STATUS_ERROR_PERMANENT_FAILURE;
                 } else if ((value < STORE_STATUS_SUCCESS) ||
-                        ((value > STORE_STATUS_SUCCESS) &amp;&amp;
+                        ((value > STORE_STATUS_SUCCESS) &&
                                 (value < STORE_STATUS_ERROR_TRANSIENT_FAILURE)) ||
                                 (value > STORE_STATUS_ERROR_END)) {
                     value = STORE_STATUS_ERROR_PERMANENT_FAILURE;
@@ -462,13 +462,13 @@ public class PduHeaders {
                 break;
             case RESPONSE_STATUS:
                 // According to oma-ts-mms-enc-v1_3, section 7.3.48, we modify the invalid value.
-                if ((value > RESPONSE_STATUS_ERROR_TRANSIENT_PARTIAL_SUCCESS) &amp;&amp;
+                if ((value > RESPONSE_STATUS_ERROR_TRANSIENT_PARTIAL_SUCCESS) &&
                         (value < RESPONSE_STATUS_ERROR_PERMANENT_FAILURE)) {
                     value = RESPONSE_STATUS_ERROR_TRANSIENT_FAILURE;
-                } else if (((value > RESPONSE_STATUS_ERROR_PERMANENT_LACK_OF_PREPAID) &amp;&amp;
+                } else if (((value > RESPONSE_STATUS_ERROR_PERMANENT_LACK_OF_PREPAID) &&
                         (value <= RESPONSE_STATUS_ERROR_PERMANENT_END)) ||
                         (value < RESPONSE_STATUS_OK) ||
-                        ((value > RESPONSE_STATUS_ERROR_UNSUPPORTED_MESSAGE) &amp;&amp;
+                        ((value > RESPONSE_STATUS_ERROR_UNSUPPORTED_MESSAGE) &&
                                 (value < RESPONSE_STATUS_ERROR_TRANSIENT_FAILURE)) ||
                                 (value > RESPONSE_STATUS_ERROR_PERMANENT_END)) {
                     value = RESPONSE_STATUS_ERROR_PERMANENT_FAILURE;

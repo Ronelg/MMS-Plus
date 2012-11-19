@@ -209,11 +209,11 @@ public class PduParser {
         boolean keepParsing = true;
         PduHeaders headers = new PduHeaders();
 
-        while (keepParsing &amp;&amp; (pduDataStream.available() > 0)) {
+        while (keepParsing && (pduDataStream.available() > 0)) {
             pduDataStream.mark(1);
             int headerField = extractByteValue(pduDataStream);
             /* parse custom text header */
-            if ((headerField >= TEXT_MIN) &amp;&amp; (headerField <= TEXT_MAX)) {
+            if ((headerField >= TEXT_MIN) && (headerField <= TEXT_MAX)) {
                 pduDataStream.reset();
                 byte [] bVal = parseWapString(pduDataStream, TYPE_TEXT_STRING);
                 if (LOCAL_LOGV) {
@@ -789,9 +789,9 @@ public class PduParser {
              * if not set anyone of them, generate a default content-location
              */
             if ((null == part.getContentLocation())
-                    &amp;&amp; (null == part.getName())
-                    &amp;&amp; (null == part.getFilename())
-                    &amp;&amp; (null == part.getContentId())) {
+                    && (null == part.getName())
+                    && (null == part.getFilename())
+                    && (null == part.getContentId())) {
                 part.setContentLocation(Long.toOctalString(
                         System.currentTimeMillis()).getBytes());
             }
@@ -872,9 +872,9 @@ public class PduParser {
             return temp;
         }
 
-        while((temp &amp; 0x80) != 0) {
+        while((temp & 0x80) != 0) {
             result = result << 7;
-            result |= temp &amp; 0x7F;
+            result |= temp & 0x7F;
             temp = pduDataStream.read();
             if (temp == -1) {
                 return temp;
@@ -882,7 +882,7 @@ public class PduParser {
         }
 
         result = result << 7;
-        result |= temp &amp; 0x7F;
+        result |= temp & 0x7F;
 
         return result;
     }
@@ -905,7 +905,7 @@ public class PduParser {
         assert(null != pduDataStream);
         int temp = pduDataStream.read();
         assert(-1 != temp);
-        int first = temp &amp; 0xFF;
+        int first = temp & 0xFF;
 
         if (first <= SHORT_LENGTH_MAX) {
             return first;
@@ -933,7 +933,7 @@ public class PduParser {
         int charset = 0;
         int temp = pduDataStream.read();
         assert(-1 != temp);
-        int first = temp &amp; 0xFF;
+        int first = temp & 0xFF;
         if (first == 0) {
             return null;    //  Blank subject, bail.
         }
@@ -992,11 +992,11 @@ public class PduParser {
         // Check first char
         int temp = pduDataStream.read();
         assert(-1 != temp);
-        if ((TYPE_QUOTED_STRING == stringType) &amp;&amp;
+        if ((TYPE_QUOTED_STRING == stringType) &&
                 (QUOTED_STRING_FLAG == temp)) {
             // Mark again if QUOTED_STRING_FLAG and ignore it
             pduDataStream.mark(1);
-        } else if ((TYPE_TEXT_STRING == stringType) &amp;&amp;
+        } else if ((TYPE_TEXT_STRING == stringType) &&
                 (QUOTE == temp)) {
             // Mark again if QUOTE and ignore it
             pduDataStream.mark(1);
@@ -1075,7 +1075,7 @@ public class PduParser {
          * CR   = <US-ASCII CR, carriage return (13)>
          * LF   = <US-ASCII LF, linefeed (10)>
          */
-        if(((ch >= 32) &amp;&amp; (ch <= 126)) || ((ch >= 128) &amp;&amp; (ch <= 255))) {
+        if(((ch >= 32) && (ch <= 126)) || ((ch >= 128) && (ch <= 255))) {
             return true;
         }
 
@@ -1095,7 +1095,7 @@ public class PduParser {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         int temp = pduDataStream.read();
         assert(-1 != temp);
-        while((-1 != temp) &amp;&amp; ('\0' != temp)) {
+        while((-1 != temp) && ('\0' != temp)) {
             // check each of the character
             if (stringType == TYPE_TOKEN_STRING) {
                 if (isTokenCharacter(temp)) {
@@ -1128,7 +1128,7 @@ public class PduParser {
         assert(null != pduDataStream);
         int temp = pduDataStream.read();
         assert(-1 != temp);
-        return temp &amp; 0xFF;
+        return temp & 0xFF;
     }
 
     /**
@@ -1148,7 +1148,7 @@ public class PduParser {
         assert(null != pduDataStream);
         int temp = pduDataStream.read();
         assert(-1 != temp);
-        return temp &amp; 0x7F;
+        return temp & 0x7F;
     }
 
     /**
@@ -1171,7 +1171,7 @@ public class PduParser {
         assert(null != pduDataStream);
         int temp = pduDataStream.read();
         assert(-1 != temp);
-        int count = temp &amp; 0xFF;
+        int count = temp & 0xFF;
 
         if (count > LONG_INTEGER_LENGTH_MAX) {
             throw new RuntimeException("Octet count greater than 8 and I can't represent that!");
@@ -1183,7 +1183,7 @@ public class PduParser {
             temp = pduDataStream.read();
             assert(-1 != temp);
             result <<= 8;
-            result += (temp &amp; 0xFF);
+            result += (temp & 0xFF);
         }
 
         return result;
@@ -1301,7 +1301,7 @@ public class PduParser {
                     } else {
                         // Text-String (extension-media)
                         byte[] type = parseWapString(pduDataStream, TYPE_TEXT_STRING);
-                        if ((null != type) &amp;&amp; (null != map)) {
+                        if ((null != type) && (null != map)) {
                             map.put(PduPart.P_TYPE, type);
                         }
                     }
@@ -1326,7 +1326,7 @@ public class PduParser {
                 case PduPart.P_START:
                 case PduPart.P_DEP_START:
                     byte[] start = parseWapString(pduDataStream, TYPE_TEXT_STRING);
-                    if ((null != start) &amp;&amp; (null != map)) {
+                    if ((null != start) && (null != map)) {
                         map.put(PduPart.P_START, start);
                     }
 
@@ -1353,7 +1353,7 @@ public class PduParser {
                     int firstValue = extractByteValue(pduDataStream);
                     pduDataStream.reset();
                     //Check first char
-                    if (((firstValue > TEXT_MIN) &amp;&amp; (firstValue < TEXT_MAX)) ||
+                    if (((firstValue > TEXT_MIN) && (firstValue < TEXT_MAX)) ||
                             (END_STRING_FLAG == firstValue)) {
                         //Text-String (extension-charset)
                         byte[] charsetStr = parseWapString(pduDataStream, TYPE_TEXT_STRING);
@@ -1389,7 +1389,7 @@ public class PduParser {
                 case PduPart.P_DEP_NAME:
                 case PduPart.P_NAME:
                     byte[] name = parseWapString(pduDataStream, TYPE_TEXT_STRING);
-                    if ((null != name) &amp;&amp; (null != map)) {
+                    if ((null != name) && (null != map)) {
                         map.put(PduPart.P_NAME, name);
                     }
 
@@ -1437,7 +1437,7 @@ public class PduParser {
         assert(-1 != temp);
         pduDataStream.reset();
 
-        int cur = (temp &amp; 0xFF);
+        int cur = (temp & 0xFF);
 
         if (cur < TEXT_MIN) {
             int length = parseValueLength(pduDataStream);
@@ -1446,9 +1446,9 @@ public class PduParser {
             temp = pduDataStream.read();
             assert(-1 != temp);
             pduDataStream.reset();
-            int first = (temp &amp; 0xFF);
+            int first = (temp & 0xFF);
 
-            if ((first >= TEXT_MIN) &amp;&amp; (first <= TEXT_MAX)) {
+            if ((first >= TEXT_MIN) && (first <= TEXT_MAX)) {
                 contentType = parseWapString(pduDataStream, TYPE_TEXT_STRING);
             } else if (first > TEXT_MAX) {
                 int index = parseShortInteger(pduDataStream);
@@ -1622,7 +1622,7 @@ public class PduParser {
                     lastLen = 0;
                     break;
                 }
-            } else if ((header >= TEXT_MIN) &amp;&amp; (header <= TEXT_MAX)) {
+            } else if ((header >= TEXT_MIN) && (header <= TEXT_MAX)) {
                 // Not assigned header.
                 byte[] tempHeader = parseWapString(pduDataStream, TYPE_TEXT_STRING);
                 byte[] tempValue = parseWapString(pduDataStream, TYPE_TEXT_STRING);
@@ -1665,7 +1665,7 @@ public class PduParser {
      */
     private static int checkPartPosition(PduPart part) {
         assert(null != part);
-        if ((null == mTypeParam) &amp;&amp;
+        if ((null == mTypeParam) &&
                 (null == mStartParam)) {
             return THE_LAST_PART;
         }

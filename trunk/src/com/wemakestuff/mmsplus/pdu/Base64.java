@@ -98,14 +98,14 @@ public class Base64 {
             b1 = base64Alphabet[base64Data[dataIndex]];
             b2 = base64Alphabet[base64Data[dataIndex + 1]];
 
-            if (marker0 != PAD &amp;&amp; marker1 != PAD) {
+            if (marker0 != PAD && marker1 != PAD) {
                 //No PAD e.g 3cQl
                 b3 = base64Alphabet[marker0];
                 b4 = base64Alphabet[marker1];
 
                 decodedData[encodedIndex] = (byte) (b1 << 2 | b2 >> 4);
                 decodedData[encodedIndex + 1] =
-                    (byte) (((b2 &amp; 0xf) << 4) | ((b3 >> 2) &amp; 0xf));
+                    (byte) (((b2 & 0xf) << 4) | ((b3 >> 2) & 0xf));
                 decodedData[encodedIndex + 2] = (byte) (b3 << 6 | b4);
             } else if (marker0 == PAD) {
                 //Two PAD e.g. 3c[Pad][Pad]
@@ -116,7 +116,7 @@ public class Base64 {
 
                 decodedData[encodedIndex] = (byte) (b1 << 2 | b2 >> 4);
                 decodedData[encodedIndex + 1] =
-                    (byte) (((b2 &amp; 0xf) << 4) | ((b3 >> 2) &amp; 0xf));
+                    (byte) (((b2 & 0xf) << 4) | ((b3 >> 2) & 0xf));
             }
             encodedIndex += 3;
         }
