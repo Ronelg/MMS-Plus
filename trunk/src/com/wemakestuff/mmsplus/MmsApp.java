@@ -30,9 +30,17 @@ import android.util.Log;
 
 import com.wemakestuff.mmsplus.data.Contact;
 import com.wemakestuff.mmsplus.data.Conversation;
+import com.wemakestuff.mmsplus.layout.LayoutManager;
+import com.wemakestuff.mmsplus.location.Country;
+import com.wemakestuff.mmsplus.location.CountryDetector;
+import com.wemakestuff.mmsplus.location.CountryListener;
 import com.wemakestuff.mmsplus.transaction.MessagingNotification;
 import com.wemakestuff.mmsplus.util.DraftCache;
 import com.wemakestuff.mmsplus.util.LogTag;
+import com.wemakestuff.mmsplus.util.PduLoaderManager;
+import com.wemakestuff.mmsplus.util.RateController;
+import com.wemakestuff.mmsplus.util.SmileyParser;
+import com.wemakestuff.mmsplus.util.ThumbnailManager;
 
 public class MmsApp extends Application {
     public static final String LOG_TAG = "Mms";
