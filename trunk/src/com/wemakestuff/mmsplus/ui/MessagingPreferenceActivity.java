@@ -38,11 +38,11 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.android.mms.MmsApp;
-import com.android.mms.MmsConfig;
-import com.android.mms.R;
-import com.android.mms.transaction.TransactionService;
-import com.android.mms.util.Recycler;
+import com.wemakestuff.mmsplus.MmsApp;
+import com.wemakestuff.mmsplus.MmsConfig;
+import com.wemakestuff.mmsplus.transaction.TransactionService;
+import com.wemakestuff.mmsplus.util.MessageUtils;
+import com.wemakestuff.mmsplus.util.Recycler;
 
 /**
  * With this activity, users can set preferences for MMS and SMS and

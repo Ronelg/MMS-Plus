@@ -17,9 +17,9 @@
 
 package com.wemakestuff.mmsplus.util;
 
-import android.util.Log;
-
 import java.util.HashMap;
+
+import android.util.Log;
 
 public abstract class AbstractCache<K, V> {
     private static final String TAG = "AbstractCache";

@@ -18,7 +18,7 @@ package com.wemakestuff.mmsplus.model;
 
 import android.content.ContentResolver;
 
-import com.android.mms.ContentRestrictionException;
+import com.wemakestuff.mmsplus.ContentRestrictionException;
 
 public interface ContentRestriction {
     void checkMessageSize(int messageSize, int increaseSize, ContentResolver resolver)

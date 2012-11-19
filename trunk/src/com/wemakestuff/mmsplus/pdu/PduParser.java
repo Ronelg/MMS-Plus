@@ -17,11 +17,6 @@
 
 package com.wemakestuff.mmsplus.pdu;
 
-import com.google.android.mms.ContentType;
-import com.google.android.mms.InvalidHeaderValueException;
-
-import android.util.Log;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
@@ -29,6 +24,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 import android.content.res.Resources;
+import android.util.Log;
+
+import com.wemakestuff.mmsplus.ContentType;
+import com.wemakestuff.mmsplus.InvalidHeaderValueException;
 
 public class PduParser {
     /**

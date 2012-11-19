@@ -23,20 +23,42 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
 
+import com.wemakestuff.mmsplus.ContentRestrictionException;
+import com.wemakestuff.mmsplus.ContentType;
+import com.wemakestuff.mmsplus.ExceedMessageSizeException;
 import com.wemakestuff.mmsplus.MmsApp;
 import com.wemakestuff.mmsplus.MmsConfig;
-import com.wemakestuff.mmsplus.model.MmsException;
+import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.ResolutionException;
+import com.wemakestuff.mmsplus.UnsupportContentTypeException;
+import com.wemakestuff.mmsplus.common.contacts.DataUsageStatUpdater;
+import com.wemakestuff.mmsplus.common.userhappiness.UserHappinessSignals;
+import com.wemakestuff.mmsplus.model.ImageModel;
+import com.wemakestuff.mmsplus.model.SlideModel;
+import com.wemakestuff.mmsplus.model.SlideshowModel;
 import com.wemakestuff.mmsplus.model.Telephony.Mms;
 import com.wemakestuff.mmsplus.model.Telephony.MmsSms;
 import com.wemakestuff.mmsplus.model.Telephony.MmsSms.PendingMessages;
 import com.wemakestuff.mmsplus.model.Telephony.Sms;
+import com.wemakestuff.mmsplus.model.TextModel;
+import com.wemakestuff.mmsplus.pdu.EncodedStringValue;
+import com.wemakestuff.mmsplus.pdu.PduBody;
+import com.wemakestuff.mmsplus.pdu.PduHeaders;
+import com.wemakestuff.mmsplus.pdu.PduPersister;
+import com.wemakestuff.mmsplus.pdu.SendReq;
+import com.wemakestuff.mmsplus.transaction.MessageSender;
+import com.wemakestuff.mmsplus.transaction.MmsMessageSender;
+import com.wemakestuff.mmsplus.transaction.SmsMessageSender;
 import com.wemakestuff.mmsplus.ui.ComposeMessageActivity;
 import com.wemakestuff.mmsplus.ui.MessagingPreferenceActivity;
+import com.wemakestuff.mmsplus.ui.SlideshowEditor;
 import com.wemakestuff.mmsplus.util.DraftCache;
 import com.wemakestuff.mmsplus.util.LogTag;
 import com.wemakestuff.mmsplus.util.MessageUtils;
 import com.wemakestuff.mmsplus.util.Recycler;
 import com.wemakestuff.mmsplus.util.SqliteWrapper;
+import com.wemakestuff.mmsplus.util.ThumbnailManager;
+import com.wemakestuff.mmsplus.widget.MmsWidgetProvider;
 
 /**
  * Contains all state related to a message being edited by the user.

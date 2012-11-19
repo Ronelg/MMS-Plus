@@ -32,11 +32,14 @@ import android.telephony.ServiceState;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.wemakestuff.mmsplus.MmsException;
 import com.wemakestuff.mmsplus.R;
 import com.wemakestuff.mmsplus.data.Contact;
-import com.wemakestuff.mmsplus.model.MmsException;
 import com.wemakestuff.mmsplus.model.Telephony.Mms;
 import com.wemakestuff.mmsplus.model.TelephonyIntents;
+import com.wemakestuff.mmsplus.pdu.EncodedStringValue;
+import com.wemakestuff.mmsplus.pdu.NotificationInd;
+import com.wemakestuff.mmsplus.pdu.PduPersister;
 import com.wemakestuff.mmsplus.ui.MessagingPreferenceActivity;
 
 public class DownloadManager {

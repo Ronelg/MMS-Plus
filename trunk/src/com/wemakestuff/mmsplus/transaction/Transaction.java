@@ -25,8 +25,8 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 
-import com.android.mms.util.SendingProgressTokenManager;
-import com.google.android.mms.MmsException;
+import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.util.SendingProgressTokenManager;
 
 /**
  * Transaction is an abstract class for notification transaction, send transaction

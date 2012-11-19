@@ -1,10 +1,10 @@
 package com.wemakestuff.mmsplus.location;
 
+import java.util.Locale;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
-
-import java.util.Locale;
 
 /**
  * This class wraps the country information.

@@ -55,19 +55,28 @@ import android.text.style.TextAppearanceSpan;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.wemakestuff.mmsplus.MmsException;
 import com.wemakestuff.mmsplus.R;
 import com.wemakestuff.mmsplus.data.Contact;
 import com.wemakestuff.mmsplus.data.Conversation;
 import com.wemakestuff.mmsplus.data.WorkingMessage;
-import com.wemakestuff.mmsplus.model.MmsException;
+import com.wemakestuff.mmsplus.model.SlideModel;
+import com.wemakestuff.mmsplus.model.SlideshowModel;
 import com.wemakestuff.mmsplus.model.Telephony.Mms;
 import com.wemakestuff.mmsplus.model.Telephony.Sms;
+import com.wemakestuff.mmsplus.pdu.EncodedStringValue;
+import com.wemakestuff.mmsplus.pdu.GenericPdu;
+import com.wemakestuff.mmsplus.pdu.MultimediaMessagePdu;
+import com.wemakestuff.mmsplus.pdu.PduHeaders;
+import com.wemakestuff.mmsplus.pdu.PduPersister;
 import com.wemakestuff.mmsplus.ui.ComposeMessageActivity;
 import com.wemakestuff.mmsplus.ui.ConversationList;
 import com.wemakestuff.mmsplus.ui.MessagingPreferenceActivity;
+import com.wemakestuff.mmsplus.util.AddressUtils;
 import com.wemakestuff.mmsplus.util.LogTag;
 import com.wemakestuff.mmsplus.util.MessageUtils;
 import com.wemakestuff.mmsplus.util.SqliteWrapper;
+import com.wemakestuff.mmsplus.widget.MmsWidgetProvider;
 
 /**
  * This class is used to update the notification indicator. It will check whether

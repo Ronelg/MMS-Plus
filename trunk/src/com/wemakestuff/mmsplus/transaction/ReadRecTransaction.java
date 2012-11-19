@@ -21,15 +21,15 @@ import java.io.IOException;
 
 import android.content.Context;
 import android.net.Uri;
-import android.provider.Telephony.Mms.Sent;
 import android.util.Log;
 
-import com.android.mms.ui.MessageUtils;
-import com.google.android.mms.MmsException;
-import com.google.android.mms.pdu.EncodedStringValue;
-import com.google.android.mms.pdu.PduComposer;
-import com.google.android.mms.pdu.PduPersister;
-import com.google.android.mms.pdu.ReadRecInd;
+import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.model.Telephony.Mms.Sent;
+import com.wemakestuff.mmsplus.pdu.EncodedStringValue;
+import com.wemakestuff.mmsplus.pdu.PduComposer;
+import com.wemakestuff.mmsplus.pdu.PduPersister;
+import com.wemakestuff.mmsplus.pdu.ReadRecInd;
+import com.wemakestuff.mmsplus.util.MessageUtils;
 
 /**
  * The ReadRecTransaction is responsible for sending read report

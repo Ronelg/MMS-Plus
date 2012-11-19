@@ -24,9 +24,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 
-import com.android.internal.app.AlertController;
-import com.android.mms.R;
-
 /**
  * This is the UI for telling the user about the storage limit setting.
  */

@@ -17,7 +17,7 @@
 
 package com.wemakestuff.mmsplus.pdu;
 
-import com.google.android.mms.InvalidHeaderValueException;
+import com.wemakestuff.mmsplus.InvalidHeaderValueException;
 
 public class GenericPdu {
     /**

@@ -26,6 +26,9 @@ import com.wemakestuff.mmsplus.MmsApp;
 import com.wemakestuff.mmsplus.R;
 import com.wemakestuff.mmsplus.model.Telephony.Mms;
 import com.wemakestuff.mmsplus.model.Telephony.Mms.Addr;
+import com.wemakestuff.mmsplus.pdu.EncodedStringValue;
+import com.wemakestuff.mmsplus.pdu.PduHeaders;
+import com.wemakestuff.mmsplus.pdu.PduPersister;
 
 public class AddressUtils {
     private static final String TAG = "AddressUtils";

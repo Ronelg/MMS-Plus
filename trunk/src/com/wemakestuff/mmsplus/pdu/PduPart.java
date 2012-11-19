@@ -17,10 +17,10 @@
 
 package com.wemakestuff.mmsplus.pdu;
 
-import android.net.Uri;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import android.net.Uri;
 
 /**
  * The pdu part.

@@ -25,7 +25,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import android.util.Log;
 
-import com.android.mms.dom.smil.SmilDocumentImpl;
+import com.wemakestuff.mmsplus.dom.smil.SmilDocumentImpl;
 
 public class SmilContentHandler extends DefaultHandler {
     private static final String TAG = "SmilContentHandler";

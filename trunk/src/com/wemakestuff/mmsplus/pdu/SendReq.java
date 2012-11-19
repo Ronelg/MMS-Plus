@@ -19,7 +19,7 @@ package com.wemakestuff.mmsplus.pdu;
 
 import android.util.Log;
 
-import com.google.android.mms.InvalidHeaderValueException;
+import com.wemakestuff.mmsplus.InvalidHeaderValueException;
 
 public class SendReq extends MultimediaMessagePdu {
     private static final String TAG = "SendReq";

@@ -18,7 +18,6 @@
 package com.wemakestuff.mmsplus.transaction;
 
 import static android.content.Intent.ACTION_BOOT_COMPLETED;
-import static android.provider.Telephony.Sms.Intents.SMS_RECEIVED_ACTION;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -32,7 +31,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
-import android.database.sqlite.SqliteWrapper;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -40,10 +38,6 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Process;
-import android.provider.Telephony.Sms;
-import android.provider.Telephony.Sms.Inbox;
-import android.provider.Telephony.Sms.Intents;
-import android.provider.Telephony.Sms.Outbox;
 import android.telephony.ServiceState;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
@@ -51,16 +45,21 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.android.internal.telephony.TelephonyIntents;
-import com.android.mms.LogTag;
-import com.android.mms.R;
-import com.android.mms.data.Contact;
-import com.android.mms.data.Conversation;
-import com.android.mms.ui.ClassZeroActivity;
-import com.android.mms.util.Recycler;
-import com.android.mms.util.SendingProgressTokenManager;
-import com.android.mms.widget.MmsWidgetProvider;
-import com.google.android.mms.MmsException;
+import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.R;
+import com.wemakestuff.mmsplus.data.Contact;
+import com.wemakestuff.mmsplus.data.Conversation;
+import com.wemakestuff.mmsplus.model.Telephony.Sms;
+import com.wemakestuff.mmsplus.model.Telephony.Sms.Inbox;
+import com.wemakestuff.mmsplus.model.Telephony.Sms.Intents;
+import com.wemakestuff.mmsplus.model.Telephony.Sms.Outbox;
+import com.wemakestuff.mmsplus.model.TelephonyIntents;
+import com.wemakestuff.mmsplus.ui.ClassZeroActivity;
+import com.wemakestuff.mmsplus.util.LogTag;
+import com.wemakestuff.mmsplus.util.Recycler;
+import com.wemakestuff.mmsplus.util.SendingProgressTokenManager;
+import com.wemakestuff.mmsplus.util.SqliteWrapper;
+import com.wemakestuff.mmsplus.widget.MmsWidgetProvider;
 
 /**
  * This service essentially plays the role of a "worker thread", allowing us to store

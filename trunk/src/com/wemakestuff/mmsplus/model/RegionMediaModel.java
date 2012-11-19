@@ -17,10 +17,10 @@
 
 package com.wemakestuff.mmsplus.model;
 
-import com.android.mms.model.RegionModel;
-
 import android.content.Context;
 import android.net.Uri;
+
+import com.wemakestuff.mmsplus.MmsException;
 
 public abstract class RegionMediaModel extends MediaModel {
     protected RegionModel mRegion;

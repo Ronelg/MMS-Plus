@@ -17,10 +17,10 @@
 
 package com.wemakestuff.mmsplus.pdu;
 
-import com.google.android.mms.InvalidHeaderValueException;
-
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import com.wemakestuff.mmsplus.InvalidHeaderValueException;
 
 public class PduHeaders {
     /**

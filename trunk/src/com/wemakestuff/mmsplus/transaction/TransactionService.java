@@ -36,23 +36,22 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
-import android.provider.Telephony.Mms;
-import android.provider.Telephony.MmsSms;
-import android.provider.Telephony.MmsSms.PendingMessages;
+import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.android.internal.telephony.Phone;
-import com.android.internal.telephony.PhoneConstants;
-import com.android.mms.LogTag;
-import com.android.mms.R;
-import com.android.mms.util.RateController;
-import com.google.android.mms.pdu.GenericPdu;
-import com.google.android.mms.pdu.NotificationInd;
-import com.google.android.mms.pdu.PduHeaders;
-import com.google.android.mms.pdu.PduParser;
-import com.google.android.mms.pdu.PduPersister;
+import com.wemakestuff.mmsplus.R;
+import com.wemakestuff.mmsplus.model.Telephony.Mms;
+import com.wemakestuff.mmsplus.model.Telephony.MmsSms;
+import com.wemakestuff.mmsplus.model.Telephony.MmsSms.PendingMessages;
+import com.wemakestuff.mmsplus.pdu.GenericPdu;
+import com.wemakestuff.mmsplus.pdu.NotificationInd;
+import com.wemakestuff.mmsplus.pdu.PduHeaders;
+import com.wemakestuff.mmsplus.pdu.PduParser;
+import com.wemakestuff.mmsplus.pdu.PduPersister;
+import com.wemakestuff.mmsplus.util.LogTag;
+import com.wemakestuff.mmsplus.util.RateController;
 
 /**
  * The TransactionService of the MMS Client is responsible for handling requests

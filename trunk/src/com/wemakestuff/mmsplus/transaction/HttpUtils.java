@@ -43,8 +43,8 @@ import android.text.TextUtils;
 import android.util.Config;
 import android.util.Log;
 
-import com.android.mms.LogTag;
-import com.android.mms.MmsConfig;
+import com.wemakestuff.mmsplus.MmsConfig;
+import com.wemakestuff.mmsplus.util.LogTag;
 
 public class HttpUtils {
     private static final String TAG = LogTag.TRANSACTION;

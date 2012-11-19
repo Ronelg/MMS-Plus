@@ -22,16 +22,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteException;
-import android.database.sqlite.SqliteWrapper;
 import android.net.Uri;
 import android.preference.PreferenceManager;
-import android.provider.Telephony.Sms;
-import android.provider.Telephony.Sms.Inbox;
 import android.util.Log;
 
-import com.android.mms.LogTag;
-import com.android.mms.ui.MessagingPreferenceActivity;
-import com.google.android.mms.MmsException;
+import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.model.Telephony.Sms;
+import com.wemakestuff.mmsplus.model.Telephony.Sms.Inbox;
+import com.wemakestuff.mmsplus.ui.MessagingPreferenceActivity;
+import com.wemakestuff.mmsplus.util.LogTag;
+import com.wemakestuff.mmsplus.util.SqliteWrapper;
 
 public class SmsMessageSender implements MessageSender {
     protected final Context mContext;

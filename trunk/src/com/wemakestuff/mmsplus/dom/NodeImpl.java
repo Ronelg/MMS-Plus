@@ -31,7 +31,7 @@ import org.w3c.dom.events.EventException;
 import org.w3c.dom.events.EventListener;
 import org.w3c.dom.events.EventTarget;
 
-import com.android.mms.dom.events.EventTargetImpl;
+import com.wemakestuff.mmsplus.dom.events.EventTargetImpl;
 
 public abstract class NodeImpl implements Node, EventTarget {
     private Node mParentNode;

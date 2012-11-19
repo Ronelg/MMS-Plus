@@ -57,16 +57,21 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.analytics.tracking.android.Transaction;
+import com.wemakestuff.mmsplus.ContentType;
 import com.wemakestuff.mmsplus.MmsApp;
 import com.wemakestuff.mmsplus.R;
 import com.wemakestuff.mmsplus.data.Contact;
 import com.wemakestuff.mmsplus.data.WorkingMessage;
+import com.wemakestuff.mmsplus.model.SlideModel;
+import com.wemakestuff.mmsplus.model.SlideshowModel;
 import com.wemakestuff.mmsplus.model.Telephony.Sms;
+import com.wemakestuff.mmsplus.pdu.PduHeaders;
 import com.wemakestuff.mmsplus.transaction.TransactionBundle;
 import com.wemakestuff.mmsplus.transaction.TransactionService;
 import com.wemakestuff.mmsplus.util.DownloadManager;
 import com.wemakestuff.mmsplus.util.ItemLoadedCallback;
 import com.wemakestuff.mmsplus.util.SmileyParser;
+import com.wemakestuff.mmsplus.util.ThumbnailManager.ImageLoaded;
 
 /**
  * This class provides view of a message in the messages list.

@@ -32,7 +32,6 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.SearchRecentSuggestions;
-import android.provider.Telephony;
 import android.text.SpannableString;
 import android.text.TextPaint;
 import android.text.style.StyleSpan;
@@ -45,9 +44,10 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.android.mms.MmsApp;
-import com.android.mms.R;
-import com.android.mms.data.Contact;
+import com.wemakestuff.mmsplus.MmsApp;
+import com.wemakestuff.mmsplus.R;
+import com.wemakestuff.mmsplus.data.Contact;
+import com.wemakestuff.mmsplus.model.Telephony;
 
 /***
  * Presents a List of search results.  Each item in the list represents a thread which

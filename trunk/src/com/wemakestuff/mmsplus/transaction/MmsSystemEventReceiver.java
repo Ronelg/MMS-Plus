@@ -22,13 +22,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
-import android.provider.Telephony.Mms;
 import android.util.Log;
 
-import com.android.internal.telephony.PhoneConstants;
-import com.android.internal.telephony.TelephonyIntents;
-import com.android.mms.LogTag;
-import com.android.mms.MmsApp;
+import com.wemakestuff.mmsplus.MmsApp;
+import com.wemakestuff.mmsplus.model.Telephony.Mms;
+import com.wemakestuff.mmsplus.model.TelephonyIntents;
+import com.wemakestuff.mmsplus.util.LogTag;
 
 /**
  * MmsSystemEventReceiver receives the

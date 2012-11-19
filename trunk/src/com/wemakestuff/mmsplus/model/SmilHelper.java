@@ -17,13 +17,6 @@
 
 package com.wemakestuff.mmsplus.model;
 
-import static com.android.mms.dom.smil.SmilMediaElementImpl.SMIL_MEDIA_END_EVENT;
-import static com.android.mms.dom.smil.SmilMediaElementImpl.SMIL_MEDIA_PAUSE_EVENT;
-import static com.android.mms.dom.smil.SmilMediaElementImpl.SMIL_MEDIA_SEEK_EVENT;
-import static com.android.mms.dom.smil.SmilMediaElementImpl.SMIL_MEDIA_START_EVENT;
-import static com.android.mms.dom.smil.SmilParElementImpl.SMIL_SLIDE_END_EVENT;
-import static com.android.mms.dom.smil.SmilParElementImpl.SMIL_SLIDE_START_EVENT;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -46,14 +39,14 @@ import android.text.TextUtils;
 import android.util.Config;
 import android.util.Log;
 
-import com.android.mms.MmsApp;
-import com.android.mms.dom.smil.SmilDocumentImpl;
-import com.android.mms.dom.smil.parser.SmilXmlParser;
-import com.android.mms.dom.smil.parser.SmilXmlSerializer;
-import com.google.android.mms.ContentType;
-import com.google.android.mms.MmsException;
-import com.google.android.mms.pdu.PduBody;
-import com.google.android.mms.pdu.PduPart;
+import com.wemakestuff.mmsplus.ContentType;
+import com.wemakestuff.mmsplus.MmsApp;
+import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.dom.smil.SmilDocumentImpl;
+import com.wemakestuff.mmsplus.dom.smil.parser.SmilXmlParser;
+import com.wemakestuff.mmsplus.dom.smil.parser.SmilXmlSerializer;
+import com.wemakestuff.mmsplus.pdu.PduBody;
+import com.wemakestuff.mmsplus.pdu.PduPart;
 
 public class SmilHelper {
     private static final String TAG = "Mms/smil";

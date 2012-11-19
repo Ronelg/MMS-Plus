@@ -17,17 +17,16 @@
 
 package com.wemakestuff.mmsplus.pdu;
 
-import android.content.ContentResolver;
-import android.content.Context;
-import android.util.Log;
-import android.text.TextUtils;
-
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.HashMap;
+
+import android.content.ContentResolver;
+import android.content.Context;
+import android.text.TextUtils;
 
 public class PduComposer {
     /**

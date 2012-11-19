@@ -18,7 +18,6 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteException;
@@ -54,6 +53,7 @@ import com.wemakestuff.mmsplus.data.Conversation;
 import com.wemakestuff.mmsplus.data.Conversation.ConversationQueryHandler;
 import com.wemakestuff.mmsplus.model.Telephony.Mms;
 import com.wemakestuff.mmsplus.model.Telephony.Threads;
+import com.wemakestuff.mmsplus.pdu.PduHeaders;
 import com.wemakestuff.mmsplus.transaction.MessagingNotification;
 import com.wemakestuff.mmsplus.transaction.SmsRejectedReceiver;
 import com.wemakestuff.mmsplus.util.DraftCache;
@@ -61,6 +61,7 @@ import com.wemakestuff.mmsplus.util.LogTag;
 import com.wemakestuff.mmsplus.util.MessageUtils;
 import com.wemakestuff.mmsplus.util.Recycler;
 import com.wemakestuff.mmsplus.util.SqliteWrapper;
+import com.wemakestuff.mmsplus.widget.MmsWidgetProvider;
 
 /**
  * This activity provides a list view of existing conversations.

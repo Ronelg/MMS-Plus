@@ -17,12 +17,13 @@
 
 package com.wemakestuff.mmsplus.transaction;
 
+import com.wemakestuff.mmsplus.model.Telephony.Sms.Intents;
+
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.PowerManager;
-import android.provider.Telephony.Sms.Intents;
 
 /**
  * Handle incoming SMSes.  Just dispatches the work off to a Service.

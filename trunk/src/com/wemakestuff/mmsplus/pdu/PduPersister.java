@@ -17,36 +17,6 @@
 
 package com.wemakestuff.mmsplus.pdu;
 
-import com.google.android.mms.ContentType;
-import com.google.android.mms.InvalidHeaderValueException;
-import com.google.android.mms.MmsException;
-import com.google.android.mms.util.DownloadDrmHelper;
-import com.google.android.mms.util.DrmConvertSession;
-import com.google.android.mms.util.PduCache;
-import com.google.android.mms.util.PduCacheEntry;
-import com.google.android.mms.util.SqliteWrapper;
-
-import android.content.ContentResolver;
-import android.content.ContentUris;
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-import android.database.DatabaseUtils;
-import android.database.sqlite.SQLiteException;
-import android.drm.DrmManagerClient;
-import android.net.Uri;
-import android.os.FileUtils;
-import android.provider.MediaStore;
-import android.provider.Telephony;
-import android.provider.Telephony.Mms;
-import android.provider.Telephony.MmsSms;
-import android.provider.Telephony.Threads;
-import android.provider.Telephony.Mms.Addr;
-import android.provider.Telephony.Mms.Part;
-import android.provider.Telephony.MmsSms.PendingMessages;
-import android.text.TextUtils;
-import android.util.Log;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -58,10 +28,37 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 
-import com.google.android.mms.pdu.EncodedStringValue;
+import android.content.ContentResolver;
+import android.content.ContentUris;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.DatabaseUtils;
+import android.database.sqlite.SQLiteException;
+import android.drm.DrmManagerClient;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.text.TextUtils;
+import android.util.Log;
+
+import com.wemakestuff.mmsplus.ContentType;
+import com.wemakestuff.mmsplus.InvalidHeaderValueException;
+import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.model.Telephony;
+import com.wemakestuff.mmsplus.model.Telephony.Mms;
+import com.wemakestuff.mmsplus.model.Telephony.Mms.Addr;
+import com.wemakestuff.mmsplus.model.Telephony.Mms.Part;
+import com.wemakestuff.mmsplus.model.Telephony.MmsSms;
+import com.wemakestuff.mmsplus.model.Telephony.MmsSms.PendingMessages;
+import com.wemakestuff.mmsplus.model.Telephony.Threads;
+import com.wemakestuff.mmsplus.util.DownloadDrmHelper;
+import com.wemakestuff.mmsplus.util.DrmConvertSession;
+import com.wemakestuff.mmsplus.util.PduCache;
+import com.wemakestuff.mmsplus.util.PduCacheEntry;
+import com.wemakestuff.mmsplus.util.SqliteWrapper;
 
 /**
  * This class is the high-level manager of PDU storage.

@@ -31,14 +31,34 @@ import android.text.style.URLSpan;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.wemakestuff.mmsplus.ContentType;
 import com.wemakestuff.mmsplus.MmsApp;
+import com.wemakestuff.mmsplus.MmsConfig;
+import com.wemakestuff.mmsplus.MmsException;
 import com.wemakestuff.mmsplus.R;
+import com.wemakestuff.mmsplus.TempFileProvider;
 import com.wemakestuff.mmsplus.data.WorkingMessage;
+import com.wemakestuff.mmsplus.model.MediaModel;
+import com.wemakestuff.mmsplus.model.SlideModel;
+import com.wemakestuff.mmsplus.model.SlideshowModel;
 import com.wemakestuff.mmsplus.model.Telephony.Mms;
 import com.wemakestuff.mmsplus.model.Telephony.Sms;
+import com.wemakestuff.mmsplus.pdu.CharacterSets;
+import com.wemakestuff.mmsplus.pdu.EncodedStringValue;
+import com.wemakestuff.mmsplus.pdu.MultimediaMessagePdu;
+import com.wemakestuff.mmsplus.pdu.NotificationInd;
+import com.wemakestuff.mmsplus.pdu.PduBody;
+import com.wemakestuff.mmsplus.pdu.PduHeaders;
+import com.wemakestuff.mmsplus.pdu.PduPart;
+import com.wemakestuff.mmsplus.pdu.PduPersister;
+import com.wemakestuff.mmsplus.pdu.RetrieveConf;
+import com.wemakestuff.mmsplus.pdu.SendReq;
+import com.wemakestuff.mmsplus.transaction.MmsMessageSender;
 import com.wemakestuff.mmsplus.ui.AsyncDialog;
 import com.wemakestuff.mmsplus.ui.MessageItem;
 import com.wemakestuff.mmsplus.ui.MessageListAdapter;
+import com.wemakestuff.mmsplus.ui.SlideshowActivity;
+import com.wemakestuff.mmsplus.ui.UriImage;
 
 /**
  * An utility class for managing messages.

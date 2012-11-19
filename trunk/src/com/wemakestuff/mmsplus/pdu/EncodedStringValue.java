@@ -17,12 +17,12 @@
 
 package com.wemakestuff.mmsplus.pdu;
 
-import android.util.Log;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+
+import android.util.Log;
 
 /**
  * Encoded-string-value = Text-string | Value-length Char-set Text-string

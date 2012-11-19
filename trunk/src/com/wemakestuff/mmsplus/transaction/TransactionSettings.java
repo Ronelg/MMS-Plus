@@ -19,14 +19,12 @@ package com.wemakestuff.mmsplus.transaction;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SqliteWrapper;
-import android.net.NetworkUtils;
-import android.provider.Telephony;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.android.internal.telephony.PhoneConstants;
-import com.android.mms.LogTag;
+import com.wemakestuff.mmsplus.model.Telephony;
+import com.wemakestuff.mmsplus.util.LogTag;
+import com.wemakestuff.mmsplus.util.SqliteWrapper;
 
 /**
  * Container of transaction settings. Instances of this class are contained

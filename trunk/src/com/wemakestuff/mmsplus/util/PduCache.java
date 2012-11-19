@@ -17,14 +17,15 @@
 
 package com.wemakestuff.mmsplus.util;
 
+import java.util.HashMap;
+import java.util.HashSet;
+
 import android.content.ContentUris;
 import android.content.UriMatcher;
 import android.net.Uri;
-import android.provider.Telephony.Mms;
 import android.util.Log;
 
-import java.util.HashMap;
-import java.util.HashSet;
+import com.wemakestuff.mmsplus.model.Telephony.Mms;
 
 public final class PduCache extends AbstractCache<Uri, PduCacheEntry> {
     private static final String TAG = "PduCache";

@@ -22,27 +22,27 @@ import java.io.IOException;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SqliteWrapper;
 import android.net.Uri;
-import android.provider.Telephony.Mms;
-import android.provider.Telephony.Mms.Inbox;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.android.mms.MmsConfig;
-import com.android.mms.ui.MessageUtils;
-import com.android.mms.ui.MessagingPreferenceActivity;
-import com.android.mms.util.DownloadManager;
-import com.android.mms.util.Recycler;
-import com.android.mms.widget.MmsWidgetProvider;
-import com.google.android.mms.MmsException;
-import com.google.android.mms.pdu.AcknowledgeInd;
-import com.google.android.mms.pdu.EncodedStringValue;
-import com.google.android.mms.pdu.PduComposer;
-import com.google.android.mms.pdu.PduHeaders;
-import com.google.android.mms.pdu.PduParser;
-import com.google.android.mms.pdu.PduPersister;
-import com.google.android.mms.pdu.RetrieveConf;
+import com.wemakestuff.mmsplus.MmsConfig;
+import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.model.Telephony.Mms;
+import com.wemakestuff.mmsplus.model.Telephony.Mms.Inbox;
+import com.wemakestuff.mmsplus.pdu.AcknowledgeInd;
+import com.wemakestuff.mmsplus.pdu.EncodedStringValue;
+import com.wemakestuff.mmsplus.pdu.PduComposer;
+import com.wemakestuff.mmsplus.pdu.PduHeaders;
+import com.wemakestuff.mmsplus.pdu.PduParser;
+import com.wemakestuff.mmsplus.pdu.PduPersister;
+import com.wemakestuff.mmsplus.pdu.RetrieveConf;
+import com.wemakestuff.mmsplus.ui.MessagingPreferenceActivity;
+import com.wemakestuff.mmsplus.util.DownloadManager;
+import com.wemakestuff.mmsplus.util.MessageUtils;
+import com.wemakestuff.mmsplus.util.Recycler;
+import com.wemakestuff.mmsplus.util.SqliteWrapper;
+import com.wemakestuff.mmsplus.widget.MmsWidgetProvider;
 
 /**
  * The RetrieveTransaction is responsible for retrieving multimedia

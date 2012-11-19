@@ -17,9 +17,9 @@
 
 package com.wemakestuff.mmsplus.transaction;
 
-import android.os.Bundle;
+import com.wemakestuff.mmsplus.internal.telephony.IccUtils;
 
-import com.android.internal.telephony.IccUtils;
+import android.os.Bundle;
 
 /**
  * A wrapper around the Bundle instances used to start the TransactionService.

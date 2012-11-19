@@ -25,7 +25,7 @@ import org.w3c.dom.smil.ElementSequentialTimeContainer;
 import org.w3c.dom.smil.ElementTime;
 import org.w3c.dom.smil.SMILElement;
 
-import com.android.mms.dom.NodeListImpl;
+import com.wemakestuff.mmsplus.dom.NodeListImpl;
 
 public abstract class ElementSequentialTimeContainerImpl extends
         ElementTimeContainerImpl implements ElementSequentialTimeContainer {

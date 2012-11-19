@@ -21,7 +21,7 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.smil.SMILLayoutElement;
 import org.w3c.dom.smil.SMILRootLayoutElement;
 
-import com.android.mms.layout.LayoutManager;
+import com.wemakestuff.mmsplus.layout.LayoutManager;
 
 public class SmilLayoutElementImpl extends SmilElementImpl implements
         SMILLayoutElement {

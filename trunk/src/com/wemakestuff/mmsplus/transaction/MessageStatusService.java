@@ -22,14 +22,14 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SqliteWrapper;
 import android.net.Uri;
-import android.provider.Telephony.Sms;
-import android.provider.Telephony.Sms.Inbox;
 import android.telephony.SmsMessage;
 import android.util.Log;
 
-import com.android.mms.LogTag;
+import com.wemakestuff.mmsplus.model.Telephony.Sms;
+import com.wemakestuff.mmsplus.model.Telephony.Sms.Inbox;
+import com.wemakestuff.mmsplus.util.LogTag;
+import com.wemakestuff.mmsplus.util.SqliteWrapper;
 
 /**
  * Service that gets started by the MessageStatusReceiver when a message status report is

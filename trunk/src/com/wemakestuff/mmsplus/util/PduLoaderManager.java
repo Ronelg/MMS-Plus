@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.model.SlideshowModel;
 import com.wemakestuff.mmsplus.pdu.GenericPdu;
 import com.wemakestuff.mmsplus.pdu.MultimediaMessagePdu;
 import com.wemakestuff.mmsplus.pdu.PduPersister;

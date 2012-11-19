@@ -16,15 +16,14 @@
  */
 package com.wemakestuff.mmsplus.util;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
 import android.content.Context;
 import android.drm.DrmConvertedStatus;
 import android.drm.DrmManagerClient;
 import android.util.Log;
-import android.provider.Downloads;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.RandomAccessFile;
 
 
 public class DrmConvertSession {

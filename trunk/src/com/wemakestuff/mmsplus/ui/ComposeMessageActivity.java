@@ -107,21 +107,39 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.wemakestuff.mmsplus.ContentType;
+import com.wemakestuff.mmsplus.MmsApp;
+import com.wemakestuff.mmsplus.MmsConfig;
+import com.wemakestuff.mmsplus.MmsException;
 import com.wemakestuff.mmsplus.R;
+import com.wemakestuff.mmsplus.TempFileProvider;
 import com.wemakestuff.mmsplus.data.Contact;
 import com.wemakestuff.mmsplus.data.ContactList;
 import com.wemakestuff.mmsplus.data.Conversation;
 import com.wemakestuff.mmsplus.data.Conversation.ConversationQueryHandler;
 import com.wemakestuff.mmsplus.data.WorkingMessage;
 import com.wemakestuff.mmsplus.data.WorkingMessage.MessageStatusListener;
+import com.wemakestuff.mmsplus.model.SlideModel;
+import com.wemakestuff.mmsplus.model.SlideshowModel;
 import com.wemakestuff.mmsplus.model.Telephony;
 import com.wemakestuff.mmsplus.model.Telephony.Mms;
 import com.wemakestuff.mmsplus.model.Telephony.Sms;
+import com.wemakestuff.mmsplus.model.TelephonyIntents;
+import com.wemakestuff.mmsplus.pdu.EncodedStringValue;
+import com.wemakestuff.mmsplus.pdu.PduBody;
+import com.wemakestuff.mmsplus.pdu.PduPart;
+import com.wemakestuff.mmsplus.pdu.PduPersister;
+import com.wemakestuff.mmsplus.pdu.SendReq;
 import com.wemakestuff.mmsplus.transaction.MessagingNotification;
 import com.wemakestuff.mmsplus.ui.MessageListView.OnSizeChangedListener;
+import com.wemakestuff.mmsplus.util.DraftCache;
 import com.wemakestuff.mmsplus.util.LogTag;
 import com.wemakestuff.mmsplus.util.MessageUtils;
+import com.wemakestuff.mmsplus.util.PhoneNumberFormatter;
+import com.wemakestuff.mmsplus.util.SendingProgressTokenManager;
+import com.wemakestuff.mmsplus.util.SmileyParser;
 import com.wemakestuff.mmsplus.util.SqliteWrapper;
+import com.wemakestuff.mmsplus.widget.MmsWidgetProvider;
 
 /**
  * This is the main UI for:

@@ -23,6 +23,7 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat;
 import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
 import com.google.i18n.phonenumbers.ShortNumberUtil;
 import com.wemakestuff.mmsplus.MmsConfig;
+import com.wemakestuff.mmsplus.location.CountryDetector;
 
 public class PhoneNumberUtils {
 	/*

@@ -1,17 +1,16 @@
 package com.wemakestuff.mmsplus.model;
 
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Map;
+
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.net.Uri;
-
-import java.io.FileDescriptor;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import java.util.Map;
 
 /**
  * MediaMetadataRetriever class provides a unified interface for retrieving

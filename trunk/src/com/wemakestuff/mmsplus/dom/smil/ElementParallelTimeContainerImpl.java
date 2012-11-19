@@ -28,7 +28,7 @@ import org.w3c.dom.smil.SMILElement;
 import org.w3c.dom.smil.Time;
 import org.w3c.dom.smil.TimeList;
 
-import com.android.mms.dom.NodeListImpl;
+import com.wemakestuff.mmsplus.dom.NodeListImpl;
 
 public abstract class ElementParallelTimeContainerImpl extends ElementTimeContainerImpl
         implements ElementParallelTimeContainer {

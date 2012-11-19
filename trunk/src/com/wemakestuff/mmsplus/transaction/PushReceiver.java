@@ -17,10 +17,6 @@
 
 package com.wemakestuff.mmsplus.transaction;
 
-import static android.provider.Telephony.Sms.Intents.WAP_PUSH_RECEIVED_ACTION;
-import static com.google.android.mms.pdu.PduHeaders.MESSAGE_TYPE_DELIVERY_IND;
-import static com.google.android.mms.pdu.PduHeaders.MESSAGE_TYPE_NOTIFICATION_IND;
-import static com.google.android.mms.pdu.PduHeaders.MESSAGE_TYPE_READ_ORIG_IND;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -28,25 +24,24 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
-import android.database.sqlite.SqliteWrapper;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.PowerManager;
-import android.provider.Telephony.Mms;
-import android.provider.Telephony.Mms.Inbox;
 import android.util.Log;
 
-import com.android.mms.MmsConfig;
-import com.android.mms.ui.MessagingPreferenceActivity;
-import com.google.android.mms.ContentType;
-import com.google.android.mms.MmsException;
-import com.google.android.mms.pdu.DeliveryInd;
-import com.google.android.mms.pdu.GenericPdu;
-import com.google.android.mms.pdu.NotificationInd;
-import com.google.android.mms.pdu.PduHeaders;
-import com.google.android.mms.pdu.PduParser;
-import com.google.android.mms.pdu.PduPersister;
-import com.google.android.mms.pdu.ReadOrigInd;
+import com.wemakestuff.mmsplus.ContentType;
+import com.wemakestuff.mmsplus.MmsConfig;
+import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.model.Telephony.Mms;
+import com.wemakestuff.mmsplus.pdu.DeliveryInd;
+import com.wemakestuff.mmsplus.pdu.GenericPdu;
+import com.wemakestuff.mmsplus.pdu.NotificationInd;
+import com.wemakestuff.mmsplus.pdu.PduHeaders;
+import com.wemakestuff.mmsplus.pdu.PduParser;
+import com.wemakestuff.mmsplus.pdu.PduPersister;
+import com.wemakestuff.mmsplus.pdu.ReadOrigInd;
+import com.wemakestuff.mmsplus.ui.MessagingPreferenceActivity;
+import com.wemakestuff.mmsplus.util.SqliteWrapper;
 
 /**
  * Receives Intent.WAP_PUSH_RECEIVED_ACTION intents and starts the

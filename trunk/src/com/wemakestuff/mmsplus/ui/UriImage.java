@@ -34,8 +34,10 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
 
+import com.wemakestuff.mmsplus.ContentType;
 import com.wemakestuff.mmsplus.model.ImageModel;
 import com.wemakestuff.mmsplus.model.Telephony.Mms.Part;
+import com.wemakestuff.mmsplus.pdu.PduPart;
 import com.wemakestuff.mmsplus.util.LogTag;
 import com.wemakestuff.mmsplus.util.MessageUtils;
 import com.wemakestuff.mmsplus.util.SqliteWrapper;

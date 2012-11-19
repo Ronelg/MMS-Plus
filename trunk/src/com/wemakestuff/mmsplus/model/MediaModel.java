@@ -32,6 +32,7 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.wemakestuff.mmsplus.MmsConfig;
+import com.wemakestuff.mmsplus.MmsException;
 import com.wemakestuff.mmsplus.util.LogTag;
 
 public abstract class MediaModel extends Model implements EventListener {

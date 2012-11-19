@@ -20,7 +20,7 @@ package com.wemakestuff.mmsplus.dom.smil;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.smil.SMILElement;
 
-import com.android.mms.dom.ElementImpl;
+import com.wemakestuff.mmsplus.dom.ElementImpl;
 
 public class SmilElementImpl extends ElementImpl implements SMILElement {
     /**

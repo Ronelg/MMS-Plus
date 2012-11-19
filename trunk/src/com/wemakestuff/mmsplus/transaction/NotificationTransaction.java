@@ -17,40 +17,32 @@
 
 package com.wemakestuff.mmsplus.transaction;
 
-import static com.android.mms.transaction.TransactionState.FAILED;
-import static com.android.mms.transaction.TransactionState.INITIALIZED;
-import static com.android.mms.transaction.TransactionState.SUCCESS;
-import static com.google.android.mms.pdu.PduHeaders.MESSAGE_TYPE_RETRIEVE_CONF;
-import static com.google.android.mms.pdu.PduHeaders.STATUS_DEFERRED;
-import static com.google.android.mms.pdu.PduHeaders.STATUS_RETRIEVED;
-import static com.google.android.mms.pdu.PduHeaders.STATUS_UNRECOGNIZED;
-
 import java.io.IOException;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.sqlite.SqliteWrapper;
 import android.net.Uri;
-import android.provider.Telephony.Mms;
-import android.provider.Telephony.Threads;
-import android.provider.Telephony.Mms.Inbox;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
-import com.android.mms.MmsApp;
-import com.android.mms.MmsConfig;
-import com.android.mms.ui.MessagingPreferenceActivity;
-import com.android.mms.util.DownloadManager;
-import com.android.mms.util.Recycler;
-import com.android.mms.widget.MmsWidgetProvider;
-import com.google.android.mms.MmsException;
-import com.google.android.mms.pdu.GenericPdu;
-import com.google.android.mms.pdu.NotificationInd;
-import com.google.android.mms.pdu.NotifyRespInd;
-import com.google.android.mms.pdu.PduComposer;
-import com.google.android.mms.pdu.PduHeaders;
-import com.google.android.mms.pdu.PduParser;
-import com.google.android.mms.pdu.PduPersister;
+import com.wemakestuff.mmsplus.MmsApp;
+import com.wemakestuff.mmsplus.MmsConfig;
+import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.model.Telephony.Mms;
+import com.wemakestuff.mmsplus.model.Telephony.Mms.Inbox;
+import com.wemakestuff.mmsplus.model.Telephony.Threads;
+import com.wemakestuff.mmsplus.pdu.GenericPdu;
+import com.wemakestuff.mmsplus.pdu.NotificationInd;
+import com.wemakestuff.mmsplus.pdu.NotifyRespInd;
+import com.wemakestuff.mmsplus.pdu.PduComposer;
+import com.wemakestuff.mmsplus.pdu.PduHeaders;
+import com.wemakestuff.mmsplus.pdu.PduParser;
+import com.wemakestuff.mmsplus.pdu.PduPersister;
+import com.wemakestuff.mmsplus.ui.MessagingPreferenceActivity;
+import com.wemakestuff.mmsplus.util.DownloadManager;
+import com.wemakestuff.mmsplus.util.Recycler;
+import com.wemakestuff.mmsplus.util.SqliteWrapper;
+import com.wemakestuff.mmsplus.widget.MmsWidgetProvider;
 
 /**
  * The NotificationTransaction is responsible for handling multimedia

@@ -18,6 +18,8 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.wemakestuff.mmsplus.R;
+import com.wemakestuff.mmsplus.TempFileProvider;
+import com.wemakestuff.mmsplus.ui.UriImage;
 import com.wemakestuff.mmsplus.util.ImageCacheService.ImageData;
 
 /**
