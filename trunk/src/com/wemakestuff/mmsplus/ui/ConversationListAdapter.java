@@ -24,8 +24,6 @@ public class ConversationListAdapter extends CursorAdapter implements
 
     private final LayoutInflater mFactory;
     private OnContentChangedListener mOnContentChangedListener;
-    
-    private Context mContext;
 
     public ConversationListAdapter(Context context, Cursor cursor) {
         super(context, cursor, false /* auto-requery */);

@@ -24,15 +24,18 @@ import android.util.Log;
 import android.util.Pair;
 
 import com.wemakestuff.mmsplus.MmsApp;
+import com.wemakestuff.mmsplus.MmsConfig;
 import com.wemakestuff.mmsplus.model.MmsException;
 import com.wemakestuff.mmsplus.model.Telephony.Mms;
 import com.wemakestuff.mmsplus.model.Telephony.MmsSms;
 import com.wemakestuff.mmsplus.model.Telephony.MmsSms.PendingMessages;
 import com.wemakestuff.mmsplus.model.Telephony.Sms;
 import com.wemakestuff.mmsplus.ui.ComposeMessageActivity;
+import com.wemakestuff.mmsplus.ui.MessagingPreferenceActivity;
 import com.wemakestuff.mmsplus.util.DraftCache;
 import com.wemakestuff.mmsplus.util.LogTag;
 import com.wemakestuff.mmsplus.util.MessageUtils;
+import com.wemakestuff.mmsplus.util.Recycler;
 import com.wemakestuff.mmsplus.util.SqliteWrapper;
 
 /**

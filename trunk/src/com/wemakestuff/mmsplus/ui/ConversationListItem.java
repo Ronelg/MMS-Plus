@@ -23,6 +23,7 @@ import com.wemakestuff.mmsplus.data.ContactList;
 import com.wemakestuff.mmsplus.data.Conversation;
 import com.wemakestuff.mmsplus.util.LogTag;
 import com.wemakestuff.mmsplus.util.MessageUtils;
+import com.wemakestuff.mmsplus.util.SmileyParser;
 
 /**
  * This class manages the view for given conversation.
@@ -38,6 +39,7 @@ public class ConversationListItem extends RelativeLayout implements
 	private View mAttachmentView;
 	private View mErrorIndicator;
 	private QuickContactBadge mAvatarView;
+	private Context mContext;
 
 	static private Drawable sDefaultContactImage;
 
@@ -50,6 +52,7 @@ public class ConversationListItem extends RelativeLayout implements
 
 	public ConversationListItem(Context context) {
 		super(context);
+		mContext = context;
 	}
 
 	public ConversationListItem(Context context, AttributeSet attrs) {
@@ -59,6 +62,7 @@ public class ConversationListItem extends RelativeLayout implements
 			sDefaultContactImage = context.getResources().getDrawable(
 					R.drawable.ic_contact_picture);
 		}
+		mContext = context;
 	}
 
 	@Override
@@ -87,7 +91,8 @@ public class ConversationListItem extends RelativeLayout implements
 	}
 
 	private CharSequence formatMessage() {
-		final int color = android.R.styleable.Theme_textColorSecondary;
+		// TODO: MMS+ Changed this from Theme_textSecondary to White
+		final int color = android.R.color.white;
 		String from = mConversation.getRecipients().formatNames(", ");
 
 		SpannableStringBuilder buf = new SpannableStringBuilder(from);

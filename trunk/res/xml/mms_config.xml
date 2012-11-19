@@ -22,6 +22,9 @@
 -->
 
 <mms_config version="4">
+    <!-- Flag indicating if Phone Number comparison should be strict -->
+    <bool name="strictComparePhoneNumber">true</bool>
+    
     <!-- Flag indicating whether MMS should be enabled -->
     <bool name="enabledMMS">true</bool>
 
