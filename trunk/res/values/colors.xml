@@ -18,6 +18,9 @@
  */
 -->
 <resources>
+    <!-- List item selected color -->
+    <color name="list_item_selected">#0099cc</color>
+    
     <!-- Activity background color -->
     <drawable name="class_zero_background">#7f040000</drawable>
 

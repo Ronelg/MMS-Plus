@@ -55,13 +55,17 @@ import com.wemakestuff.mmsplus.data.Conversation.ConversationQueryHandler;
 import com.wemakestuff.mmsplus.model.Telephony.Mms;
 import com.wemakestuff.mmsplus.model.Telephony.Threads;
 import com.wemakestuff.mmsplus.transaction.MessagingNotification;
+import com.wemakestuff.mmsplus.transaction.SmsRejectedReceiver;
+import com.wemakestuff.mmsplus.util.DraftCache;
 import com.wemakestuff.mmsplus.util.LogTag;
 import com.wemakestuff.mmsplus.util.MessageUtils;
+import com.wemakestuff.mmsplus.util.Recycler;
+import com.wemakestuff.mmsplus.util.SqliteWrapper;
 
 /**
  * This activity provides a list view of existing conversations.
  */
-public class ConversationList extends ListActivity {
+public class ConversationList extends ListActivity  implements DraftCache.OnDraftChangedListener {
 	private static final String TAG = "ConversationList";
 	private static final boolean DEBUG = false;
 	private static final boolean DEBUGCLEANUP = true;
@@ -102,7 +106,9 @@ public class ConversationList extends ListActivity {
 		listView.setOnCreateContextMenuListener(mConvListOnCreateContextMenuListener);
 		listView.setOnKeyListener(mThreadListKeyListener);
 		listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
-		listView.setMultiChoiceModeListener(new ModeCallback());
+		
+		// TODO: MMS+ Change this so that it actually works or something.
+		//listView.setMultiChoiceModeListener(new ModeCallback());
 
 		// Tell the list view which view to display when the list is empty
 		listView.setEmptyView(findViewById(R.id.empty));
@@ -363,30 +369,6 @@ public class ConversationList extends ListActivity {
 			SearchableInfo info = searchManager.getSearchableInfo(this
 					.getComponentName());
 			mSearchView.setSearchableInfo(info);
-		}
-
-		MenuItem cellBroadcastItem = menu.findItem(R.id.action_cell_broadcasts);
-		if (cellBroadcastItem != null) {
-			// Enable link to Cell broadcast activity depending on the value in
-			// config.xml.
-			boolean isCellBroadcastAppLinkEnabled = this
-					.getResources()
-					.getBoolean(
-							com.android.internal.R.bool.config_cellBroadcastAppLinks);
-			try {
-				if (isCellBroadcastAppLinkEnabled) {
-					PackageManager pm = getPackageManager();
-					if (pm.getApplicationEnabledSetting("com.android.cellbroadcastreceiver") == PackageManager.COMPONENT_ENABLED_STATE_DISABLED) {
-						isCellBroadcastAppLinkEnabled = false; // CMAS app
-																// disabled
-					}
-				}
-			} catch (IllegalArgumentException ignored) {
-				isCellBroadcastAppLinkEnabled = false; // CMAS app not installed
-			}
-			if (!isCellBroadcastAppLinkEnabled) {
-				cellBroadcastItem.setVisible(false);
-			}
 		}
 
 		return true;

@@ -389,7 +389,7 @@ public class ContactInfoCache {
 	 * Cache query results for repeated queries.
 	 */
 	public String getDisplayName(String email) {
-		Matcher match = MessageUtils.NAME_ADDR_EMAIL_PATTERN.matcher(email);
+		Matcher match = Regex.NAME_ADDR_EMAIL_PATTERN.matcher(email);
 		if (match.matches()) {
 			// email has display name
 			return getEmailDisplayName(match.group(1));
@@ -448,7 +448,7 @@ public class ContactInfoCache {
 	}
 
 	private static String getEmailDisplayName(String displayString) {
-		Matcher match = MessageUtils.QUOTED_STRING_PATTERN.matcher(displayString);
+		Matcher match = Regex.QUOTED_STRING_PATTERN.matcher(displayString);
 		if (match.matches()) {
 			return match.group(1);
 		}

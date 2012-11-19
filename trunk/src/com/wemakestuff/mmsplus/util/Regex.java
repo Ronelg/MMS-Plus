@@ -136,6 +136,19 @@ public class Regex {
                 + "([0-9][0-9\\- \\.][0-9\\- \\.]+[0-9])"); // <digit><digit|sdd>+<digit> 
 
     /**
+	 * mailbox = name-addr name-addr = [display-name] angle-addr angle-addr
+	 * = [CFWS] "<" addr-spec ">" [CFWS]
+	 */
+	public static final Pattern NAME_ADDR_EMAIL_PATTERN = Pattern
+			.compile("\\s*(\"[^\"]*\"|[^<>\"]+)\\s*<([^<>]+)>\\s*");
+
+	/**
+	 * quoted-string = [CFWS] DQUOTE *([FWS] qcontent) [FWS] DQUOTE [CFWS]
+	 */
+	public static final Pattern QUOTED_STRING_PATTERN = Pattern
+			.compile("\\s*\"([^\"]*)\"\\s*");
+	
+    /**
      *  Convenience method to take all of the non-null matching groups in a
      *  regex Matcher and return them as a concatenated string.
      *

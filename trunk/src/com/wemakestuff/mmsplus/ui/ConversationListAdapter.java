@@ -20,63 +20,64 @@ import com.wemakestuff.mmsplus.data.Conversation;
 public class ConversationListAdapter extends CursorAdapter implements
 		AbsListView.RecyclerListener {
 	private static final String TAG = "ConversationListAdapter";
-	private static final boolean LOCAL_LOGV = false;
+    private static final boolean LOCAL_LOGV = false;
 
-	private final LayoutInflater mFactory;
-	private OnContentChangedListener mOnContentChangedListener;
+    private final LayoutInflater mFactory;
+    private OnContentChangedListener mOnContentChangedListener;
+    
+    private Context mContext;
 
-	public ConversationListAdapter(Context context, Cursor cursor) {
-		super(context, cursor, false /* auto-requery */);
-		mFactory = LayoutInflater.from(context);
-	}
+    public ConversationListAdapter(Context context, Cursor cursor) {
+        super(context, cursor, false /* auto-requery */);
+        mFactory = LayoutInflater.from(context);
+    }
 
-	@Override
-	public void bindView(View view, Context context, Cursor cursor) {
-		if (!(view instanceof ConversationListItem)) {
-			Log.e(TAG, "Unexpected bound view: " + view);
-			return;
-		}
+    @Override
+    public void bindView(View view, Context context, Cursor cursor) {
+        if (!(view instanceof ConversationListItem)) {
+            Log.e(TAG, "Unexpected bound view: " + view);
+            return;
+        }
 
-		ConversationListItem headerView = (ConversationListItem) view;
-		Conversation conv = Conversation.from(context, cursor);
-		headerView.bind(context, conv);
-	}
+        ConversationListItem headerView = (ConversationListItem) view;
+        Conversation conv = Conversation.from(context, cursor);
+        headerView.bind(context, conv);
+    }
 
-	public void onMovedToScrapHeap(View view) {
-		ConversationListItem headerView = (ConversationListItem) view;
-		headerView.unbind();
-	}
+    public void onMovedToScrapHeap(View view) {
+        ConversationListItem headerView = (ConversationListItem)view;
+        headerView.unbind();
+    }
 
-	@Override
-	public View newView(Context context, Cursor cursor, ViewGroup parent) {
-		if (LOCAL_LOGV)
-			Log.v(TAG, "inflating new view");
-		return mFactory.inflate(R.layout.conversation_list_item, parent, false);
-	}
+    @Override
+    public View newView(Context context, Cursor cursor, ViewGroup parent) {
+        if (LOCAL_LOGV) Log.v(TAG, "inflating new view");
+        return mFactory.inflate(R.layout.conversation_list_item, parent, false);
+    }
 
-	public interface OnContentChangedListener {
-		void onContentChanged(ConversationListAdapter adapter);
-	}
+    public interface OnContentChangedListener {
+        void onContentChanged(ConversationListAdapter adapter);
+    }
 
-	public void setOnContentChangedListener(OnContentChangedListener l) {
-		mOnContentChangedListener = l;
-	}
+    public void setOnContentChangedListener(OnContentChangedListener l) {
+        mOnContentChangedListener = l;
+    }
 
-	@Override
-	protected void onContentChanged() {
-		if (mCursor != null && !mCursor.isClosed()) {
-			if (mOnContentChangedListener != null) {
-				mOnContentChangedListener.onContentChanged(this);
-			}
-		}
-	}
+    @Override
+    protected void onContentChanged() {
+        if (mCursor != null && !mCursor.isClosed()) {
+            if (mOnContentChangedListener != null) {
+                mOnContentChangedListener.onContentChanged(this);
+            }
+        }
+    }
 
-	public void uncheckAll() {
-		int count = getCount();
-		for (int i = 0; i < count; i++) {
-			Cursor cursor = (Cursor) getItem(i);
-			Conversation conv = Conversation.from(mContext, cursor);
-			conv.setIsChecked(false);
-		}
-	}
+    public void uncheckAll() {
+        int count = getCount();
+        for (int i = 0; i < count; i++) {
+            Cursor cursor = (Cursor)getItem(i);
+            Conversation conv = Conversation.from(mContext, cursor);
+            conv.setIsChecked(false);
+        }
+    }
 }

@@ -17,6 +17,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
 
+import com.wemakestuff.mmsplus.util.Regex;
 import com.wemakestuff.mmsplus.util.SqliteWrapper;
 
 /**
@@ -1593,18 +1594,7 @@ public final class Telephony {
 		 */
 		public static final String DEFAULT_SORT_ORDER = "date DESC";
 
-		/**
-		 * mailbox = name-addr name-addr = [display-name] angle-addr angle-addr
-		 * = [CFWS] "<" addr-spec ">" [CFWS]
-		 */
-		public static final Pattern NAME_ADDR_EMAIL_PATTERN = Pattern
-				.compile("\\s*(\"[^\"]*\"|[^<>\"]+)\\s*<([^<>]+)>\\s*");
-
-		/**
-		 * quoted-string = [CFWS] DQUOTE *([FWS] qcontent) [FWS] DQUOTE [CFWS]
-		 */
-		public static final Pattern QUOTED_STRING_PATTERN = Pattern
-				.compile("\\s*\"([^\"]*)\"\\s*");
+		
 
 		public static final Cursor query(ContentResolver cr, String[] projection) {
 			return cr.query(CONTENT_URI, projection, null, null,
@@ -1636,7 +1626,7 @@ public final class Telephony {
 		}
 
 		public static String extractAddrSpec(String address) {
-			Matcher match = NAME_ADDR_EMAIL_PATTERN.matcher(address);
+			Matcher match = Regex.NAME_ADDR_EMAIL_PATTERN.matcher(address);
 
 			if (match.matches()) {
 				return match.group(2);

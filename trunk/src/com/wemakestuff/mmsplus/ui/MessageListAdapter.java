@@ -33,6 +33,7 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 
 import com.wemakestuff.mmsplus.R;
+import com.wemakestuff.mmsplus.model.MmsException;
 import com.wemakestuff.mmsplus.model.Telephony.Mms;
 import com.wemakestuff.mmsplus.model.Telephony.MmsSms;
 import com.wemakestuff.mmsplus.model.Telephony.MmsSms.PendingMessages;
