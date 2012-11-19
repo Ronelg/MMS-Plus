@@ -1,14 +1,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ConversationList" >
+    android:layout_height="match_parent" >
+
+    <ListView
+        android:id="@android:id/list"
+        style="?android:attr/listViewWhiteStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:cacheColorHint="@android:color/white"
+        android:drawSelectorOnTop="false"
+        android:fadingEdgeLength="16dip"
+        android:scrollbarStyle="insideOverlay" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/loading_conversations"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
