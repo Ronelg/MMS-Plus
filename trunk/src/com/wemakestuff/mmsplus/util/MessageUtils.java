@@ -64,7 +64,7 @@ import com.wemakestuff.mmsplus.ui.UriImage;
  * An utility class for managing messages.
  */
 public class MessageUtils {
-    interface ResizeImageResultCallback {
+    public interface ResizeImageResultCallback {
         void onResizeResult(PduPart part, boolean append);
     }
 

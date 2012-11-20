@@ -35,7 +35,9 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Window;
 
+import com.wemakestuff.mmsplus.R;
 import com.wemakestuff.mmsplus.model.Telephony.Sms;
+import com.wemakestuff.mmsplus.model.Telephony.Sms.Inbox;
 import com.wemakestuff.mmsplus.transaction.MessagingNotification;
 import com.wemakestuff.mmsplus.util.SqliteWrapper;
 

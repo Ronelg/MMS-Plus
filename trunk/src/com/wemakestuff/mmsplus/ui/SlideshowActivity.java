@@ -44,10 +44,12 @@ import android.widget.MediaController;
 import android.widget.MediaController.MediaPlayerControl;
 
 import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.R;
 import com.wemakestuff.mmsplus.dom.AttrImpl;
 import com.wemakestuff.mmsplus.dom.smil.SmilDocumentImpl;
 import com.wemakestuff.mmsplus.dom.smil.SmilPlayer;
 import com.wemakestuff.mmsplus.dom.smil.parser.SmilXmlSerializer;
+import com.wemakestuff.mmsplus.model.LayoutModel;
 import com.wemakestuff.mmsplus.model.RegionModel;
 import com.wemakestuff.mmsplus.model.SlideshowModel;
 import com.wemakestuff.mmsplus.model.SmilHelper;

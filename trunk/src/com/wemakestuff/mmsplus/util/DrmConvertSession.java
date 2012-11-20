@@ -25,6 +25,8 @@ import android.drm.DrmConvertedStatus;
 import android.drm.DrmManagerClient;
 import android.util.Log;
 
+import com.wemakestuff.mmsplus.provider.Downloads;
+
 
 public class DrmConvertSession {
     private DrmManagerClient mDrmClient;

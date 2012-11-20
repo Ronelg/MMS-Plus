@@ -28,11 +28,9 @@ import android.content.Intent;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteException;
-import android.database.sqlite.SqliteWrapper;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.Telephony.Sms;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -44,8 +42,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.android.mms.R;
-import com.android.mms.transaction.MessagingNotification;
+import com.wemakestuff.mmsplus.R;
+import com.wemakestuff.mmsplus.model.Telephony.Sms;
+import com.wemakestuff.mmsplus.transaction.MessagingNotification;
+import com.wemakestuff.mmsplus.util.SqliteWrapper;
 
 /**
  * Displays a list of the SMS messages stored on the ICC.

@@ -25,6 +25,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -35,52 +37,60 @@ import android.widget.TextView;
 import com.wemakestuff.mmsplus.R;
 
 /**
- * This class provides an embedded editor/viewer of slide-show attachment.
+ * A simplified view of slide in the slides list.
  */
-public class SlideshowAttachmentView extends LinearLayout implements
-        SlideViewInterface {
-    private static final String TAG = "SlideshowAttachmentView";
+public class SlideListItemView extends LinearLayout implements SlideViewInterface {
+    private static final String TAG = "SlideListItemView";
 
-    private ImageView mImageView;
-    private TextView mTextView;
+    private TextView mTextPreview;
+    private ImageView mImagePreview;
+    private TextView mAttachmentName;
+    private ImageView mAttachmentIcon;
 
-    public SlideshowAttachmentView(Context context) {
+    public SlideListItemView(Context context) {
         super(context);
     }
 
-    public SlideshowAttachmentView(Context context, AttributeSet attrs) {
+    public SlideListItemView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
     @Override
     protected void onFinishInflate() {
-        mImageView = (ImageView) findViewById(R.id.slideshow_image);
-        mTextView = (TextView) findViewById(R.id.slideshow_text);
+        mTextPreview = (TextView) findViewById(R.id.text_preview);
+        mTextPreview.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+        mImagePreview = (ImageView) findViewById(R.id.image_preview);
+        mAttachmentName = (TextView) findViewById(R.id.attachment_name);
+        mAttachmentIcon = (ImageView) findViewById(R.id.attachment_icon);
     }
 
     public void startAudio() {
-        // TODO Auto-generated method stub
+        // Playing audio is not needed in this view.
     }
 
     public void startVideo() {
-        // TODO Auto-generated method stub
+        // Playing audio is not needed in this view.
     }
 
     public void setAudio(Uri audio, String name, Map<String, ?> extras) {
-        // TODO Auto-generated method stub
+        if (name != null) {
+            mAttachmentName.setText(name);
+            mAttachmentIcon.setImageResource(R.drawable.ic_mms_music);
+        } else {
+            mAttachmentName.setText("");
+            mAttachmentIcon.setImageDrawable(null);
+        }
     }
 
     public void setImage(String name, Bitmap bitmap) {
-        if (null == bitmap) {
-            try {
+        try {
+            if (null == bitmap) {
                 bitmap = BitmapFactory.decodeResource(getResources(),
                         R.drawable.ic_missing_thumbnail_picture);
-            } catch (java.lang.OutOfMemoryError e) {
-                // We don't even have enough memory to load the "missing thumbnail" image
             }
-        }
-        if (bitmap != null) {
-            mImageView.setImageBitmap(bitmap);      // implementation doesn't appear to be null-safe
+            mImagePreview.setImageBitmap(bitmap);
+        } catch (java.lang.OutOfMemoryError e) {
+            Log.e(TAG, "setImage: out of memory: ", e);
         }
     }
 
@@ -89,22 +99,31 @@ public class SlideshowAttachmentView extends LinearLayout implements
     }
 
     public void setImageVisibility(boolean visible) {
-        mImageView.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
+        // TODO Auto-generated method stub
     }
 
     public void setText(String name, String text) {
-        mTextView.setText(text);
+        mTextPreview.setText(text);
+        mTextPreview.setVisibility(TextUtils.isEmpty(text) ? View.GONE : View.VISIBLE);
     }
 
     public void setTextVisibility(boolean visible) {
-        mTextView.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
+        // TODO Auto-generated method stub
     }
 
     public void setVideo(String name, Uri video) {
+        if (name != null) {
+            mAttachmentName.setText(name);
+            mAttachmentIcon.setImageResource(R.drawable.movie);
+        } else {
+            mAttachmentName.setText("");
+            mAttachmentIcon.setImageDrawable(null);
+        }
+
         MediaPlayer mp = new MediaPlayer();
         try {
             mp.setDataSource(mContext, video);
-            mImageView.setImageBitmap(mp.getFrameAt(1000));
+            mImagePreview.setImageBitmap(mp.getFrameAt(1000));
         } catch (IOException e) {
             Log.e(TAG, "Unexpected IOException.", e);
         } finally {
@@ -112,21 +131,23 @@ public class SlideshowAttachmentView extends LinearLayout implements
         }
     }
 
+    public void setVideoThumbnail(String name, Bitmap thumbnail) {
+    }
+
     public void setVideoVisibility(boolean visible) {
         // TODO Auto-generated method stub
     }
 
     public void stopAudio() {
-        // TODO Auto-generated method stub
+        // Stopping audio is not needed in this view.
     }
 
     public void stopVideo() {
-        // TODO Auto-generated method stub
+        // Stopping video is not needed in this view.
     }
 
     public void reset() {
-        mImageView.setImageURI(null);
-        mTextView.setText("");
+        // TODO Auto-generated method stub
     }
 
     public void setVisibility(boolean visible) {
@@ -151,8 +172,5 @@ public class SlideshowAttachmentView extends LinearLayout implements
     public void seekVideo(int seekTo) {
         // TODO Auto-generated method stub
 
-    }
-
-    public void setVideoThumbnail(String name, Bitmap bitmap) {
     }
 }

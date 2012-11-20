@@ -23,11 +23,13 @@ import android.util.Log;
 
 import com.wemakestuff.mmsplus.ContentType;
 import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.model.AudioModel;
 import com.wemakestuff.mmsplus.model.ImageModel;
 import com.wemakestuff.mmsplus.model.RegionModel;
 import com.wemakestuff.mmsplus.model.SlideModel;
 import com.wemakestuff.mmsplus.model.SlideshowModel;
 import com.wemakestuff.mmsplus.model.TextModel;
+import com.wemakestuff.mmsplus.model.VideoModel;
 
 /**
  * An utility to edit contents of a slide.

@@ -21,7 +21,9 @@ import android.content.Context;
 import android.os.Handler;
 import android.util.Log;
 
+import com.wemakestuff.mmsplus.model.AudioModel;
 import com.wemakestuff.mmsplus.model.ImageModel;
+import com.wemakestuff.mmsplus.model.LayoutModel;
 import com.wemakestuff.mmsplus.model.MediaModel;
 import com.wemakestuff.mmsplus.model.MediaModel.MediaAction;
 import com.wemakestuff.mmsplus.model.Model;
@@ -30,6 +32,7 @@ import com.wemakestuff.mmsplus.model.RegionModel;
 import com.wemakestuff.mmsplus.model.SlideModel;
 import com.wemakestuff.mmsplus.model.SlideshowModel;
 import com.wemakestuff.mmsplus.model.TextModel;
+import com.wemakestuff.mmsplus.model.VideoModel;
 import com.wemakestuff.mmsplus.ui.MessageListView.OnSizeChangedListener;
 import com.wemakestuff.mmsplus.util.ItemLoadedCallback;
 

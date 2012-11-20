@@ -39,6 +39,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wemakestuff.mmsplus.MmsException;
+import com.wemakestuff.mmsplus.R;
 import com.wemakestuff.mmsplus.model.IModelChangedObserver;
 import com.wemakestuff.mmsplus.model.Model;
 import com.wemakestuff.mmsplus.model.SlideModel;

@@ -40,6 +40,7 @@ import android.view.MenuItem;
 
 import com.wemakestuff.mmsplus.MmsApp;
 import com.wemakestuff.mmsplus.MmsConfig;
+import com.wemakestuff.mmsplus.R;
 import com.wemakestuff.mmsplus.transaction.TransactionService;
 import com.wemakestuff.mmsplus.util.MessageUtils;
 import com.wemakestuff.mmsplus.util.Recycler;

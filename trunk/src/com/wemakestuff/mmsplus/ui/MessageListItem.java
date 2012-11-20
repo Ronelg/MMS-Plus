@@ -76,7 +76,8 @@ import com.wemakestuff.mmsplus.util.ThumbnailManager.ImageLoaded;
 /**
  * This class provides view of a message in the messages list.
  */
-public class MessageListItem extends LinearLayout implements OnClickListener {
+public class MessageListItem extends LinearLayout implements
+		SlideViewInterface, OnClickListener {
 	public static final String EXTRA_URLS = "com.android.mms.ExtraUrls";
 
 	private static final String TAG = "MessageListItem";
