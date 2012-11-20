@@ -13,7 +13,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<inset xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="#20000000"
-    android:insetLeft="50dip"/>
+<TextView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text1"
+    android:textColor="#aaaaaa"
+    android:textSize="18sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/more_string"
+    android:paddingLeft="8dip"
+    android:paddingRight="8dip"
+    />

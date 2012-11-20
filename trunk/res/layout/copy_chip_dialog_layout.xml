@@ -14,6 +14,10 @@
      limitations under the License.
 -->
 
-<inset xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="#20000000"
-    android:insetLeft="50dip"/>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/copy_email"
+    android:id="@+android:id/button1"
+    android:background="@null"
+    android:layout_gravity="left"/>

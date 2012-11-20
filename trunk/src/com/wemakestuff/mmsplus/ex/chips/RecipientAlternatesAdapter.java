@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-import android.app.DownloadManager.Query;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -19,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wemakestuff.mmsplus.R;
+import com.wemakestuff.mmsplus.ex.chips.Queries.Query;
 
 /**
  * RecipientAlternatesAdapter backs the RecipientEditTextView for managing contacts

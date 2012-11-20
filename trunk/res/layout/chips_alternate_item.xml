@@ -14,6 +14,10 @@
      limitations under the License.
 -->
 
-<inset xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="#20000000"
-    android:insetLeft="50dip"/>
+<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include layout="@layout/chips_recipient_dropdown_item"/>
+
+</FrameLayout>

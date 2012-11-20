@@ -17,4 +17,11 @@ All Rights Reserved. -->
     <dimen name="widget_margin_left">0dip</dimen>
     <dimen name="widget_margin_right">0dip</dimen>
     <dimen name="widget_margin_bottom">0dip</dimen>
+    
+    <!-- Chips -->
+    <dimen name="chip_padding">8dip</dimen>
+    <dimen name="chip_height">32dip</dimen>
+    <dimen name="chip_text_size">14sp</dimen>
+    <dimen name="line_spacing_extra">4dip</dimen>
+        
 </resources>

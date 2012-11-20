@@ -54,6 +54,9 @@ public class MmsApp extends Application {
     private PduLoaderManager mPduLoaderManager;
     private ThumbnailManager mThumbnailManager;
     private DrmManagerClient mDrmManagerClient;
+    
+    //Copied from android.content.Context
+    public static final String COUNTRY_DETECTOR = "country_detector";
 
     @Override
     public void onCreate() {
@@ -73,7 +76,7 @@ public class MmsApp extends Application {
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
         // Figure out the country *before* loading contacts and formatting numbers
-        mCountryDetector = (CountryDetector) getSystemService(Context.COUNTRY_DETECTOR);
+        mCountryDetector = (CountryDetector) getSystemService(COUNTRY_DETECTOR);
         mCountryListener = new CountryListener() {
             @Override
             public synchronized void onCountryDetected(Country country) {
