@@ -27,6 +27,7 @@ import android.net.Uri;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import com.wemakestuff.mmsplus.R;
 import com.wemakestuff.mmsplus.ui.ComposeMessageActivity;
 import com.wemakestuff.mmsplus.ui.ConversationList;
 import com.wemakestuff.mmsplus.util.LogTag;

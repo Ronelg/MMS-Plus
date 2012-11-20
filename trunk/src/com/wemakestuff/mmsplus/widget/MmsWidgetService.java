@@ -31,6 +31,7 @@ import android.view.View;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
+import com.wemakestuff.mmsplus.R;
 import com.wemakestuff.mmsplus.data.Contact;
 import com.wemakestuff.mmsplus.data.Conversation;
 import com.wemakestuff.mmsplus.model.Telephony.Threads;
